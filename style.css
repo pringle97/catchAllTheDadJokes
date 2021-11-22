@@ -675,7 +675,7 @@ input {
   }
 * {
   box-sizing: border-box;
-}
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -684,7 +684,19 @@ input {
   }
 }
 
-.btn {
-  display: flex;
+.container {
+  display:flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.card-action {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hide {
+  display: none;
 }
