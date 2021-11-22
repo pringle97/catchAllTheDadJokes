@@ -89,3 +89,4 @@ document.getElementById('start-button').addEventListener('click', event => {
 //     })
 //     .catch(err => console.log(err))
 // })
+let randomNumber = (Math.floor(Math.random()))
