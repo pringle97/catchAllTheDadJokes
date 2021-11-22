@@ -38,6 +38,11 @@
       </ul>
       <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">About Us</a></li>
+    <li><a href="badges.html">Pokedex</a></li>
+  </ul>
   <main>
     <div class="container">
     <h1>Welcome to the Safari Zone!</h1> 
@@ -65,8 +70,16 @@
       </p>
     </div>
   </section>
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
+ 
 </body>
 </html>
