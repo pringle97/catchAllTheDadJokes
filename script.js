@@ -2,7 +2,11 @@ const pokemon = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon",
 
 //catch rate
 let x = Math.floor((Math.random() * 2));
-  
+
+let ball = document.getElementById('ball')
+let berry = document.getElementById('berry')
+let goNear = document.getElementById('go-near')
+let runAway = document.getElementById('run-away')
 
 
 console.log(x)
