@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -201,5 +204,63 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">About Us</a></li>
+        <li><a href="badges.html">Pokedex</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">About Us</a></li>
+    <li><a href="badges.html">Pokedex</a></li>
+  </ul>
+  <main>
+    <div class="container">
+      <h1>Welcome to the Safari Zone!</h1>
+      <h3>About the Safari Zone:</h3>
+      <p>
+        Here you can catch wild pokemon from the Kanto region! Use your resources to make catching easier! You might
+        even find a special one. Try and collect them all!
+      </p>
+    </div>
+  </main>
+  <section>
+    <div class="container">
+      <div class="col s6">
+      <div id="pokemon"></div>
+      <a id="ball" class="waves-effect waves-light btn">throw a ball</a>
+      <a id="berry" class="waves-effect waves-light btn">throw a berry</a>
+      <a id="go-near" class="waves-effect waves-light btn">go near</a>
+      <a id="run-away" class="waves-effect waves-light btn">run away</a>    
+        <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
+          style="max-width:100%;height:auto;">
+        
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <p>
+        enter pokedex here
+      </p>
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
+
 </body>
+
 </html>

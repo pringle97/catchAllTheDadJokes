@@ -673,4 +673,17 @@ input {
   #right-panel {
     width: 100%;
   }
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
 }
