@@ -26,22 +26,66 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.ScrollSpy.init(elems, options);
 });
 var instance = M.ScrollSpy.getInstance(elem);
+document.getElementById('start-button').addEventListener('click', event => {
+  event.preventDefault()
 
-axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
-  .then(res => {
-    const pokemon = res.data
-    console.log(pokemon)
-    if (pokemon.types[0].type.name) {
-      
-    }
-    document.getElementById('pokemon').
+
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+    .then(res => {
+      const pokemon = res.data
+      console.log(pokemon)
+
+      if (pokemon.types[0].type.name) {
+        document.getElementById('pokemon').
+          innerHTML = `
+        <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
+        <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
+        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
+      `
+      } else {
+      document.getElementById('pokemon').
       innerHTML = `
-    <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-    <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
-    <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-    <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-    <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
-    `
-    console.log(pokemon.sprites.front_default)
-  })
-  .catch(err => console.log(err))
+        <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
+        <h2>Type: ${capitalize(pokemon.types[0].type.name) }</h2 >
+        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
+      `
+      }
+    
+    })
+    .catch(err => console.log(err))
+})
+
+
+
+
+
+
+
+
+// document.getElementById('start-button').addEventListener('click', event => {
+//   event.preventDefault()
+
+
+//   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+//     .then(res => {
+//       const pokemon = res.data
+//       console.log(pokemon)
+//       if (pokemon.types[0].type.name) {
+
+//       }
+//       document.getElementById('pokemon').
+//         innerHTML = `
+//     <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
+//     <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
+//     <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+//     <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+//     <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
+//     `
+//       console.log(pokemon.sprites.front_default)
+//     })
+//     .catch(err => console.log(err))
+// })
