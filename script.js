@@ -6,16 +6,24 @@ let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+let addDecimal = (num) => {
+  return (num / 10).toFixed(1);
+}
+
+
 axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
-  .then (res => {
+  .then(res => {
     const pokemon = res.data
     console.log(pokemon)
+    if (pokemon.types[0].type.name) {
+      
+    }
     document.getElementById('pokemon').
-    innerHTML =`
+      innerHTML = `
     <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-    <h2>Type:</h2>
-    <h5>Height: ${pokemon.height} m</h5>
-    <h5>Weight: ${pokemon.weight} kg</h5>
+    <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
+    <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+    <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
     <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
     `
     console.log(pokemon.sprites.front_default)
