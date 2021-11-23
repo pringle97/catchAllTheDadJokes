@@ -11,17 +11,17 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
-function catchPokemon() {
-  document.getElementById('ball').addEventListener('click', event => {
-    event.preventDefault
-    //need to make variables for pokemon name or caught pokemon in the placeholder
-    console.log(`pokemon: ${placeholder.value}`);
-    addToLocalStorage(placeholder.value);
-    placeholder.value = '';
-    if (x <= 50) {
-    }
-  })
-}
+// function catchPokemon() {
+//   document.getElementById('ball').addEventListener('click', event => {
+//     event.preventDefault
+//     //need to make variables for pokemon name or caught pokemon in the placeholder
+//     console.log(`pokemon: ${placeholder.value}`);
+//     addToLocalStorage(placeholder.value);
+//     placeholder.value = '';
+//     if (x <= 50) {
+//     }
+//   })
+// }
 
 //local storage
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
