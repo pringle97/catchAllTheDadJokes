@@ -72,7 +72,14 @@ document.getElementById('start-button').addEventListener('click', event => {
   // .catch (err => console.log(err))
 });
 
-
+document.getElementById('ball').addEventListener('click', event =>{
+  event.preventDefault();
+  let catchPokemon = Math.floor(Math.random() * 1)
+  console.log(catchPokemon)
+   if (catchPokemon == 0) {
+     alert("you've caught a pokemon!")
+   }
+});
 
 
 
@@ -93,7 +100,7 @@ function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
   // stringify the <array></array>
   var caughtPokemonToString = JSON.stringify(caughtPokemon);
   localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-
+}
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
@@ -125,4 +132,3 @@ function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
 //     })
 //     .catch(err => console.log(err))
 // })
-
