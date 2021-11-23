@@ -1,57 +1,115 @@
-document.getElementById(`random`).addEventListener('click', event => {
-  event.preventDefault()
+// let i = 0;
+// let jokeSetup = `${setup}`;
+// let speed = 50;
 
-let randomNumber = Math.floor(Math.random() * 2)
-console.log(randomNumber)
+// function typeWriter() {
+//   if (i < jokeSetup.length) {
+//     document.getElementById("quote").innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typeWriter, speed);
+//   }
+// }
 
-if (randomNumber === 0 ) {
 
+
+document.getElementById('random').addEventListener('click', event => {
+  event.preventDefault();
+
+  let randomNumber = Math.floor(Math.random() * 2);
+  console.log(randomNumber);
   
-  axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
-  .then(res => {
-    console.log(res)
-    let punchLine = res.data.punchline
-    let setup = res.data.setup
-    document.getElementById('quote').innerHTML = ''
-    
-    const randomQuoteElem = document.createElement(`div`)
-    randomQuoteElem.innerHTML = 
-    `<div>
-    <h1> ${setup}</h1>
-    <h2>${punchLine}</h2>
-    </div
-    `
-    
-    document.getElementById('quote').append(randomQuoteElem)
   
+  if (randomNumber === 0 ) {
     
-  })
-  .catch(err => console.log(err))
+    axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
+    .then(res => {
+      console.log(res);
+        const quoteElem = document.getElementById('quote');
+        const setupElem = document.getElementById('setup');
+        const punchlineElem = document.getElementById('punchline');
+        let punchline = res.data.punchline;
+        let setup = res.data.setup;
+        let words = `${setup} - ${punchline}`
+        let i = 0;
+        let speed = 30;
+        
+        
+        console.log(setup)
+        console.log(setup.charAt(i))
+        console.log(words)
+        
+        setupElem.innerHTML = '';
+        quoteElem.innerHTML = '';
+        punchlineElem.innerHTML = '';
 
-} else {
+        function typeWriter() {
+          if (i < words.length) {
+            document.getElementById("setup").innerHTML += words.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
+        typeWriter()
+        
+        
+        // function typeWriter2() {
+        //   if (i < punchline.length) {
+        //     document.getElementById("punchline").innerHTML += punchline.charAt(i);
+        //     i++;
+        //     setTimeout(typeWriter2, speed);
+        //   }
+        // }
+        
+        // console.log(punchline)
+        // console.log()
+        
+        
+        
+        
+        // typeWriter();
+        // typeWriter2();
+    
+        // quoteElem.innerHTML = `
+        //   <p>${setup}</p>
+        //   <p>${punchline}</p>
+        //   `;     
+    })
+  // .catch(err => console.log(err));
+
+  } else {
     axios.get(`https://geek-jokes.sameerkumar.website/api?format=json`)
       .then(res => {
-        console.log(res)
-        joke = res.data.joke
+        console.log(res);
+        let joke = res.data.joke;
+        const quoteElem = document.getElementById('quote');
+        const setupElem = document.getElementById('setup');
+        const punchlineElem = document.getElementById('punchline');
+        let i = 0;
+        let speed = 30;
+        
+        quoteElem.innerHTML = '';
+        setupElem.innerHTML = '';
+        punchlineElem.innerHTML = '';
 
-        document.getElementById('quote').innerHTML = ''
+        function typeWriter3() {
+          if (i < joke.length) {
+            document.getElementById("quote").innerHTML += joke.charAt(i);
+            i++;
+            setTimeout(typeWriter3, speed);
+          }
+        }
+        // console.log(joke)
+        // console.log(joke.charAt(i))
+        typeWriter3();
 
-        const randomQuoteElem = document.createElement(`div`)
-        randomQuoteElem.innerHTML =
-          `<div>
-          <h1>${joke}</h1>
-          </div
-          `
-
-        document.getElementById('quote').append(randomQuoteElem)
-
-
+                
       })
       .catch(err => console.log(err))
-    }
+      
+  }
 
 })
-
 
 
 
