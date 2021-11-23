@@ -11,20 +11,34 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
+function catchPokemon() {
+  document.getElementById('ball').addEventListener('click', event => {
+    event.preventDefault
+    //need to make variables for pokemon name or caught pokemon in the placeholder
+    console.log(`pokemon: ${placeholder.value}`);
+    addToLocalStorage(placeholder.value);
+    placeholder.value = '';
+    if (x <= 50) {
+    }
+  })
+}
+
 //local storage
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
-function addToLocalStorage( newlyCaughtPokemon) {
+function addToLocalStorage(newlyCaughtPokemon) {
   //construct pokemon object.
-  var pokedexObj = {
+  let pokedexObj = {
       pokemon: newlyCaughtPokemon,
   };
   // add new poke to array
   caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  // stringify the poke array
+  let caughtPokemonToString = JSON.stringify(caughtPokemon);
   localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
 }
+
+
 //catching pokemon
 //reset function that takes you to next poke or main page
 //click event to release poke using reset function
