@@ -56,30 +56,8 @@ let addDecimal = (num) => {
   return (num / 10).toFixed(1);
 }
 
-// function for mcss modals
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.modal');
-  var instances = M.Modal.init(elems);
-});
-
-// function for mcss scrollspy
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.scrollspy');
-  var instances = M.ScrollSpy.init(elems);
-});
-
-// function for mcss sidenav
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems);
-});
-
-// function for mcss tooltips
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.tooltipped');
-  var instances = M.Tooltip.init(elems);
-});
-
+// the one mcss function to rule them all (conveniently initializes everything so components work)
+M.AutoInit();
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault();
@@ -123,6 +101,14 @@ document.getElementById('start-button').addEventListener('click', event => {
   // .catch (err => console.log(err))
 });
 
+document.getElementById('ball').addEventListener('click', event =>{
+  event.preventDefault();
+  let catchPokemon = Math.floor(Math.random() * 1)
+  console.log(catchPokemon)
+   if (catchPokemon == 0) {
+     alert("you've caught a pokemon!")
+   }
+});
 
 
 
@@ -130,6 +116,20 @@ document.getElementById('start-button').addEventListener('click', event => {
 
 
 
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+  //construct pokemon object.
+  var pokedexObj = {
+    name: alreadyCaughtPokemon,
+    score: newlyCaughtPokemon,
+  };
+  // add new poke to array
+  caughtPokemon.push(pokedexObj);
+  // stringify the <array></array>
+  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+}
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
@@ -161,4 +161,3 @@ document.getElementById('start-button').addEventListener('click', event => {
 //     })
 //     .catch(err => console.log(err))
 // })
-
