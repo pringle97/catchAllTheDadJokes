@@ -23,22 +23,6 @@ console.log(x)
 //   })
 // }
 
-//local storage
-let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
-
-function addToLocalStorage(newlyCaughtPokemon) {
-  //construct pokemon object.
-  let pokedexObj = {
-      pokemon: newlyCaughtPokemon,
-  };
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the poke array
-  let caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-}
-
-
 //catching pokemon
 //reset function that takes you to next poke or main page
 //click event to release poke using reset function
@@ -101,6 +85,8 @@ document.getElementById('start-button').addEventListener('click', event => {
   // .catch (err => console.log(err))
 });
 
+let pokemon = document.getElementById('pokemon')
+
 document.getElementById('ball').addEventListener('click', event =>{
   event.preventDefault();
   let catchPokemon = Math.floor(Math.random() * 1)
@@ -108,21 +94,19 @@ document.getElementById('ball').addEventListener('click', event =>{
    if (catchPokemon == 0) {
      alert("you've caught a pokemon!")
    }
+  console.log(`Name: ${pokemon}`);
+  addToLocalStorage(pokemon.value);
+  userName.value = '';
 });
 
-
-
-
-
-
-
+const userName = document.getElementById('pokemon');
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
 function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+  event.preventDefault
   //construct pokemon object.
   var pokedexObj = {
-    name: alreadyCaughtPokemon,
-    score: newlyCaughtPokemon,
+    pokemon: newlyCaughtPokemon,
   };
   // add new poke to array
   caughtPokemon.push(pokedexObj);
