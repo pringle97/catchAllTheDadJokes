@@ -86,6 +86,20 @@ document.getElementById('start-button').addEventListener('click', event => {
   // .catch (err => console.log(err))
 });
 
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+  //construct user/score object.
+  var userObj = {
+    name: alreadyCaughtPokemon,
+    score: newlyCaughtPokemon,
+  };
+  // add new score to array
+  caughtPokemon.push(userObj);
+  // stringify the <array></array>
+  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
