@@ -42,17 +42,18 @@ document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault();
   let pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
-  
+
   document.getElementById('pokemon').innerHTML = '';
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
       const pokemon = res.data;
       console.log(pokemon);
+      let svg = pokemon.sprites.other.dream_world.front_default;
 
       if (pokemon.types[1]) {
         document.getElementById('pokemon').innerHTML = `
-        <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}" width="100%">
+        <img src = "${svg}" alt="${pokemon.species.name}" width="100%">
         <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
         <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
@@ -62,7 +63,7 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(pokemon);
         console.log(pokemon.types[0].type.name);
         document.getElementById('pokemon').innerHTML = `
-        <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}" width="100%">
+        <img src = "${svg}" alt="${pokemon.species.name}" width="100%">
         <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
         <h2>Type: ${capitalize(pokemon.types[0].type.name)}</h2 >
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
