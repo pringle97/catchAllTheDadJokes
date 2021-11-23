@@ -37,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.Sidenav.init(elems);
 });
 
+// function for mcss tooltips
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elems);
+});
+
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault();
@@ -54,27 +60,27 @@ document.getElementById('start-button').addEventListener('click', event => {
       if (pokemon.types[1]) {
         document.getElementById('cardContent').classList.remove('hide');
         document.getElementById('pokemon').innerHTML = `
-        <img src ="${svg}" alt="${pokemon.species.name}">
-        <h2>Pokemon Name: ${capitalize(pokemon.species.name)}</h2>
+        <img class="activator" src="${svg}" alt="${pokemon.species.name}">
         `;
         document.getElementById('cardContent').innerHTML = `
-        <h3>Type: ${capitalize(pokemon.types[0].type.name)}</h3>
-        <h4>Height: ${addDecimal(pokemon.height)} m</h4>
-        <h4>Weight: ${addDecimal(pokemon.weight)} kg</h4>
-        `
+        <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
+        <h5>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h5>
+        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        `;
       } else {
         console.log(pokemon);
         console.log(pokemon.types[0].type.name);
         document.getElementById('cardContent').classList.remove('hide');
         document.getElementById('pokemon').innerHTML = `
-        <img src ="${svg}" alt="${pokemon.species.name}">
-        <h2>Pokemon Name: ${capitalize(pokemon.species.name)}</h2>
+        <img class="activator" src ="${svg}" alt="${pokemon.species.name}">
         `;
         document.getElementById('cardContent').innerHTML = `
-        <h3>Type: ${capitalize(pokemon.types[0].type.name)}</h3>
-        <h4>Height: ${addDecimal(pokemon.height)} m</h4>
-        <h4>Weight: ${addDecimal(pokemon.weight)} kg</h4>
-        `
+        <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
+        <h5>Type: ${capitalize(pokemon.types[0].type.name)}</h5>
+        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        `;
       }
     })
   // .catch (err => console.log(err))

@@ -707,3 +707,7 @@ input {
 .hide {
   display: none;
 }
+
+#pokemonCard {
+  padding: 1% 1% 1% 1%;
+}

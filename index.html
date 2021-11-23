@@ -220,30 +220,24 @@
   
 
  
-  <div class="container center flow-text">
-    <h2>Welcome to the Safari Zone!</h2>
-    <h4>About the Safari Zone:</h4>
-    <p>
-      Here you can catch wild pokemon from the Kanto region! Use your resources to make catching easier! You might
-      even find a special one. Try and collect them all!
-    </p>
-
-    <button id="start-button" class="btn">Generate Pokemon</button>
-
-    <div class="container">
+  <div class="container row center flow-text">
+    <h1>Welcome to the Safari Zone!</h1>
+    
       <div class="row">
         <div class="col s12">
-          <div class="card">
-            <div id="pokemon" class="card-image">
-              
+          <div id="pokemonCard" class="card medium horizontal z-depth-5">
+            <div id="pokemon" class="card-image waves-effect waves-block waves-light">
+              <img src="assets/images/snorlax.svg">
             </div>
-            <div id="cardContent" class="card-content hide">
-              <p></p>
+            <div class="card-stacked medium">
+              <div id="cardContent" class="card-content medium">
+                <p></p>
+              </div>
+              <a id="start-button" class="btn waves-effect waves-light green darken-3 tooltipped" data-position="top" data-tooltip="Watch out for Pokemon!"><i class="material-icons right">directions_walk</i>Explore</a>
             </div>
           </div>
         </div>
-      </div>
-    </div>        
+      </div>       
 
       <a id="ball" class="waves-effect waves-light btn">throw a ball</a>
       <a id="berry" class="waves-effect waves-light btn">throw a berry</a>
