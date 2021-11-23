@@ -3,7 +3,7 @@
 
 let randomNumber = (Math.floor(Math.random()))
 
-//generating number between 0 and 1 
+//generating number between 1 and 100 
 let x = Math.floor((Math.random() * 100) +1);
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
@@ -11,11 +11,26 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
+//local storage
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+function addToLocalStorage( newlyCaughtPokemon) {
+  //construct pokemon object.
+  var pokedexObj = {
+      pokemon: newlyCaughtPokemon,
+  };
+  // add new poke to array
+  caughtPokemon.push(pokedexObj);
+  // stringify the <array></array>
+  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+}
 //catching pokemon
 //reset function that takes you to next poke or main page
 //click event to release poke using reset function
 //click event if poke runs away using reset function
-
+//if you catch, take player to pokedex
+//local storage saves poke and we will pull from storage to display 
 
 
 
@@ -100,21 +115,6 @@ document.getElementById('start-button').addEventListener('click', event => {
 
 
 
-
-
-let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
-
-function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
-  //construct pokemon object.
-  var pokedexObj = {
-    name: alreadyCaughtPokemon,
-    score: newlyCaughtPokemon,
-  };
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
 
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
