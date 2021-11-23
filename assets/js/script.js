@@ -52,29 +52,36 @@ document.getElementById('start-button').addEventListener('click', event => {
       let svg = pokemon.sprites.other.dream_world.front_default;
 
       if (pokemon.types[1]) {
+        document.getElementById('cardContent').classList.remove('hide');
         document.getElementById('pokemon').innerHTML = `
-        <img src = "${svg}" alt="${pokemon.species.name}" width="100%">
-        <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-        <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <img src ="${svg}" alt="${pokemon.species.name}">
+        <h2>Pokemon Name: ${capitalize(pokemon.species.name)}</h2>
         `;
+        document.getElementById('cardContent').innerHTML = `
+        <h3>Type: ${capitalize(pokemon.types[0].type.name)}</h3>
+        <h4>Height: ${addDecimal(pokemon.height)} m</h4>
+        <h4>Weight: ${addDecimal(pokemon.weight)} kg</h4>
+        `
       } else {
         console.log(pokemon);
         console.log(pokemon.types[0].type.name);
+        document.getElementById('cardContent').classList.remove('hide');
         document.getElementById('pokemon').innerHTML = `
-        <img src = "${svg}" alt="${pokemon.species.name}" width="100%">
-        <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-        <h2>Type: ${capitalize(pokemon.types[0].type.name)}</h2 >
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <img src ="${svg}" alt="${pokemon.species.name}">
+        <h2>Pokemon Name: ${capitalize(pokemon.species.name)}</h2>
         `;
+        document.getElementById('cardContent').innerHTML = `
+        <h3>Type: ${capitalize(pokemon.types[0].type.name)}</h3>
+        <h4>Height: ${addDecimal(pokemon.height)} m</h4>
+        <h4>Weight: ${addDecimal(pokemon.weight)} kg</h4>
+        `
       }
     })
   // .catch (err => console.log(err))
 });
 
-
+{/* <span class="card-title">Card Title</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
 
 
