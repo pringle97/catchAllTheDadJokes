@@ -86,8 +86,8 @@ document.getElementById('start-button').addEventListener('click', event => {
   // .catch (err => console.log(err))
 });
 
-{/* <span class="card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
+// {/* <span class="card-title">Card Title</span>
+//               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
 
 
