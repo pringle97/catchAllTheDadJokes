@@ -1,7 +1,4 @@
 // const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
-<<<<<<< HEAD:script.js
-const pokemonSpriteEl = document.getElementById('sprite')
-=======
 
 
 let randomNumber = (Math.floor(Math.random()))
@@ -14,7 +11,6 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
->>>>>>> 4f419fafe6eaae78329938ebafaf50b3d74f3efe:assets/js/script.js
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -27,11 +23,7 @@ let addDecimal = (num) => {
 M.AutoInit();
 
 document.getElementById('start-button').addEventListener('click', event => {
-<<<<<<< HEAD:script.js
-  event.preventDefault()
-=======
   event.preventDefault();
->>>>>>> 4f419fafe6eaae78329938ebafaf50b3d74f3efe:assets/js/script.js
   let pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
 
@@ -43,26 +35,6 @@ document.getElementById('start-button').addEventListener('click', event => {
       console.log(pokemon);
       let svg = pokemon.sprites.other.dream_world.front_default;
 
-<<<<<<< HEAD:script.js
-      if (pokemon.types.length == 2) {
-        document.getElementById('pokemon').innerHTML = `
-          <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-          <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
-          <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-          <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-          <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
-        `
-      } else {
-        document.getElementById('pokemon').innerHTML = `
-          <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-          <h2>Type: ${capitalize(pokemon.types[0].type.name)}</h2 >
-          <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-          <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-          <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
-        `
-      }
-      pokemonSpriteEl.src = pokemon.sprites.front_default
-=======
       if (pokemon.types[1]) {
         document.getElementById('cardContent').classList.remove('hide');
         document.getElementById('pokemon').innerHTML = `
@@ -88,7 +60,6 @@ document.getElementById('start-button').addEventListener('click', event => {
         <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
         `;
       }
->>>>>>> 4f419fafe6eaae78329938ebafaf50b3d74f3efe:assets/js/script.js
     })
   // .catch (err => console.log(err))
 });
