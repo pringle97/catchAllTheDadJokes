@@ -94,7 +94,7 @@ document.getElementById('ball').addEventListener('click', event =>{
    if (catchPokemon == 0) {
      alert("you've caught a pokemon!")
    }
-  console.log(`Name: ${userName}`);
+  console.log(`Name: ${userName.value}`);
   addToLocalStorage(userName.value);
   userName.value = '';
 });
