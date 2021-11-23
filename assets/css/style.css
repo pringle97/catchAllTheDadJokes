@@ -711,3 +711,11 @@ input {
 #pokemonCard {
   padding: 1% 1% 1% 1%;
 }
+
+#start-button {
+  margin-left: 2%;
+}
+
+#pokemon {
+  padding: 1% 1% 0 1%;
+}
