@@ -89,13 +89,13 @@ document.getElementById('start-button').addEventListener('click', event => {
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
 function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
-  //construct user/score object.
-  var userObj = {
+  //construct pokemon object.
+  var pokedexObj = {
     name: alreadyCaughtPokemon,
     score: newlyCaughtPokemon,
   };
-  // add new score to array
-  caughtPokemon.push(userObj);
+  // add new poke to array
+  caughtPokemon.push(pokedexObj);
   // stringify the <array></array>
   var caughtPokemonToString = JSON.stringify(caughtPokemon);
   localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
