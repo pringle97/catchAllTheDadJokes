@@ -110,6 +110,7 @@ document.getElementById('ball').addEventListener('click', event =>{
       console.log(pokemon)
       let pokemonName = pokemon.name
       console.log(pokemonName)
+      let pokeList = document.getElementById('pokeList')
 
       let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
       // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
@@ -125,12 +126,24 @@ document.getElementById('ball').addEventListener('click', event =>{
 
       localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
-      for (let i = 0; i < caughtPokemonArr.length; i++) {
+      // document.addEventListener('click', event => {
+      //   if (event.target.id === 'saveRandom') {
+      //     quotes.push(quote)
+      //     renderQuotes()
+      //     localStorage.setItem('quotes', JSON.stringify(quotes))
+      //     document.getElementById('showRandom').innerHTML = ''
+      //   }
+      // })
 
-        box.innerHTML += `
-        <li> ${caughtPokemonArr[i]} </li>
-        `
-      }
+      // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+      //   const listElem = document.createElement('li')
+      //   listElem.className = 'collection-item'
+      //   listElem.innerHTML = `
+      //     <h5>${pokemonName}</h5>      
+      //     <button class="btn btn-danger delete" data-index="${i}">X</button>
+      //   `
+      //   document.getElementById('pokeList').append(listElem)
+      // })
 
         if (catchPokemon == 0) {
           alert("you've caught a pokemon!")
