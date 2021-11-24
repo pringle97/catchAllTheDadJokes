@@ -8,14 +8,20 @@
 }
 
 .nav-wrapper {
-  background: rgb(255, 27, 27);
-  background: linear-gradient(90deg, rgba(255, 27, 27, 1) 15%, rgba(255, 245, 0, 1) 50%, rgba(31, 53, 255, 1) 85%);
+  background-color: #70c0a0;
   padding: 0 2% 2% 2%;
+}
+
+.button-action {
+  background-color: #70c0a0;
 }
 
 .modal {
   width: 70%;
+}
 
+.modal-trigger {
+  background-color: #70c0a0;
 }
 
 .red {
@@ -702,8 +708,8 @@ input {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
+
 
 .card-action {
   height: 200px;
@@ -726,4 +732,8 @@ input {
 
 #cardContent {
   margin-top: 50px;
+}
+
+h2 {
+  font-weight: bold;
 }
