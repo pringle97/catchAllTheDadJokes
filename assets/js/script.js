@@ -4,7 +4,7 @@
 let randomNumber = (Math.floor(Math.random()))
 
 //generating number between 1 and 100 
-let x = Math.floor((Math.random() * 100) +1);
+let x = Math.floor((Math.random() * 100) + 1);
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
@@ -53,7 +53,7 @@ document.getElementById('start-button').addEventListener('click', event => {
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
       const pokemon = res.data;
-      console.log(pokemon);
+      console.log(res.data);
       let svg = pokemon.sprites.other.dream_world.front_default;
 
       if (pokemon.types[1]) {
@@ -80,26 +80,27 @@ document.getElementById('start-button').addEventListener('click', event => {
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
         <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
         `;
+        document.getElementById('ball').addEventListener('click', event => {
+          event.preventDefault();
+          let catchPokemon = Math.floor(Math.random() * 1)
+          console.log(catchPokemon)
+          if (catchPokemon == 0) {
+            alert("you've caught a pokemon!")
+          }
+          console.log(`Name: ${pokemon.species.name}`);
+          addToLocalStorage(pokemon.species.name);
+          pokemon.species.name = '';
+        });
       }
     })
   // .catch (err => console.log(err))
 });
 
-let pokemon = document.getElementById('pokemon')
+// let pokemon = document.getElementById('pokemon')
 
-document.getElementById('ball').addEventListener('click', event =>{
-  event.preventDefault();
-  let catchPokemon = Math.floor(Math.random() * 1)
-  console.log(catchPokemon)
-   if (catchPokemon == 0) {
-     alert("you've caught a pokemon!")
-   }
-  console.log(`Name: ${userName.value}`);
-  addToLocalStorage(userName.value);
-  userName.value = '';
-});
 
-const userName = document.getElementById('pokemon');
+
+// const pokemon.species.name = document.getElementById('pokemon');
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
 function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
