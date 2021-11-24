@@ -9,6 +9,7 @@ let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
 // function catchPokemon() {
 //   document.getElementById('ball').addEventListener('click', event => {
@@ -39,13 +40,14 @@ let addDecimal = (num) => {
   return (num / 10).toFixed(1);
 }
 
+let pokemonNum = (Math.floor(Math.random() * 151) + 1)
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit();
 
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault();
-  let pokemonNum = (Math.floor(Math.random() * 151) + 1)
+  // let pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
 
   document.getElementById('pokemon').innerHTML = '';
@@ -80,36 +82,41 @@ document.getElementById('start-button').addEventListener('click', event => {
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
         <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
         `;
-        document.getElementById('ball').addEventListener('click', event => {
-          event.preventDefault();
-          let catchPokemon = Math.floor(Math.random() * 1)
-          console.log(catchPokemon)
-          if (catchPokemon == 0) {
-            alert("you've caught a pokemon!")
-          }
-          console.log(`Name: ${pokemon.species.name}`);
-          addToLocalStorage(pokemon.species.name);
-          pokemon.species.name = '';
-        });
+
       }
     })
   // .catch (err => console.log(err))
 })
 
+document.getElementById('ball').addEventListener('click', event => {
+  event.preventDefault();
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+    .then(res => {
+      const pokemon = res.data
+      // let pokemonNum = (Math.floor(Math.random() * 151) + 1)
+      let catchPokemon = Math.floor(Math.random() * 1)
+      console.log(catchPokemon)
+      if (catchPokemon == 0) {
+        alert("you've caught a pokemon!")
+      }
+      console.log(`Name: ${pokemon.species.name}`);
+      addToLocalStorage(pokemon.species.name);
+      pokemon.species.name = '';
+    });
+})
 
-// let pokemon = document.getElementById('pokemon')
-
-
+let pokemon = document.getElementById('pokemon')
 
 // const pokemon.species.name = document.getElementById('pokemon');
-let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
-function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+
+function addToLocalStorage(caughtPokemon, newlyCaughtPokemon) {
   event.preventDefault
   //construct pokemon object.
   var pokedexObj = {
     pokemon: newlyCaughtPokemon,
   };
+  console.log(pokedexObj)
   // add new poke to array
   caughtPokemon.push(pokedexObj);
   // stringify the <array></array>
