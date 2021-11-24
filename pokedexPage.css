@@ -126,14 +126,14 @@ h4 {
   line-height: 16px;
   margin: auto;
   background: white;
-  border: 2px solid white;
-  box-shadow: 0 2px 0 2px black,
-    inset 0 2px 0 2px black,
-    0 0 0 2px black,
-    inset 0 0 0 2px black;
+  border: 1.5px solid white;
+  box-shadow: 0 1.5px 0 1.5px black,
+    inset 0 1.5px 0 1.5px black,
+    0 0 0 1.5px black,
+    inset 0 0 0 1.5px black;
 }
 
-.pokemonInteract>i {
+/* .pokemonInteract>i {
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -151,7 +151,7 @@ h4 {
   to {
     margin-top: 23px;
   }
-}
+} */
 
 /* text dialogue box ends here */
 
