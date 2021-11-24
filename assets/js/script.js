@@ -77,7 +77,9 @@ document.getElementById('ball').addEventListener('click', event =>{
   let catchPokemon = Math.floor(Math.random() * 1)
   console.log(catchPokemon)
    if (catchPokemon == 0) {
-     alert("you've caught a pokemon!")
+     document.getElementById('modal2').addEventListener("click", event => {
+      
+     })
    }
 });
 
