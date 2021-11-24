@@ -66,7 +66,7 @@
 
 }
 
-.pokemonList {
+/* .pokemonList {
   b font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 2px;
   padding: 8px;
@@ -82,7 +82,7 @@
   height: 560px;
 
   overflow-y: scroll;
-}
+} */
 
 .pokemonInfo {
 
