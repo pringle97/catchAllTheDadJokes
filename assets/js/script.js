@@ -2,13 +2,34 @@
 
 let randomNumber = (Math.floor(Math.random()))
 
-//generating number between 0 and 1 
-let x = Math.floor((Math.random() * 2));
+//generating number between 1 and 100 
+let x = Math.floor((Math.random() * 100) +1);
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
+
+// function catchPokemon() {
+//   document.getElementById('ball').addEventListener('click', event => {
+//     event.preventDefault
+//     //need to make variables for pokemon name or caught pokemon in the placeholder
+//     console.log(`pokemon: ${placeholder.value}`);
+//     addToLocalStorage(placeholder.value);
+//     placeholder.value = '';
+//     if (x <= 50) {
+//     }
+//   })
+// }
+
+//catching pokemon
+//reset function that takes you to next poke or main page
+//click event to release poke using reset function
+//click event if poke runs away using reset function
+//if you catch, take player to pokedex
+//local storage saves poke and we will pull from storage to display 
+
+
 
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -65,6 +86,39 @@ document.getElementById('start-button').addEventListener('click', event => {
 })
 
 
+let pokemon = document.getElementById('pokemon')
+
+document.getElementById('ball').addEventListener('click', event =>{
+  event.preventDefault();
+  let catchPokemon = Math.floor(Math.random() * 1)
+  console.log(catchPokemon)
+   if (catchPokemon == 0) {
+     alert("you've caught a pokemon!")
+   }
+  console.log(`Name: ${userName}`);
+  addToLocalStorage(userName.value);
+  userName.value = '';
+});
+
+const userName = document.getElementById('pokemon');
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+  event.preventDefault
+  //construct pokemon object.
+  var pokedexObj = {
+    pokemon: newlyCaughtPokemon,
+  };
+  // add new poke to array
+  caughtPokemon.push(pokedexObj);
+  // stringify the <array></array>
+  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+}
+// {/* <span class="card-title">Card Title</span>
+//               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
+
+
 
 
 
@@ -92,4 +146,3 @@ document.getElementById('start-button').addEventListener('click', event => {
 //     })
 //     .catch(err => console.log(err))
 // })
-
