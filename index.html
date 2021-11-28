@@ -12,63 +12,63 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<div>
 
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo center start-button"><img src="assets/images/safari-ball.png" width="100px"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pokedex.html">Pokedéx</a></li>
         <li><a href="sass.html">About Us</a></li>
-        <li><a href="badges.html">Pokedex</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pokedex.html">Pokedéx</a></li>
     <li><a href="sass.html">About Us</a></li>
-    <li><a href="pokedex.html">Pokedex</a></li>
   </ul>
 
-  <div class="container row center flow-text">
-    <h1>Welcome to the Safari Zone!</h1>
-
-    <div class="row">
-      <div class="col s12">
-        <div id="pokemonCard" class="card medium horizontal hoverable">
-          <div id="pokemonImg" class="card-image waves-effect waves-block valign-wrapper">
-            <img src="assets/images/theSafariZone.jpg">
+  <div class="container gridContainer">
+    <section class="title center">
+      <h1>Welcome to the Safari Zone!</h1>
+    </section>
+    <div class="row row1 valign-wrapper">
+      <div class="col s12 l6 column1">
+        <div id="pokemonCard" class="card card1 center">
+          <div id="pokemonImg" class="card-image waves-effect waves-block container">
+            <img src="assets/images/slobro.png">
           </div>
-          <div class="card-stacked medium">
-            <div id="cardContent" class="card-content flow-text"></div>
-          </div>
+            <!-- <div id="cardContent" class="card-content flow-text"></div> -->
         </div>
       </div>
-      <div class="col s12 m7">
-        <div class="card">
-          <div class="card-image">
-            <span class="card-title"></span>
+        <div class="col s12 l6 column2">
+          <div id="cardContent" class="col s12 card-content center">
+            <h2><strong>Slowbro</strong></h2>
+            <h5>Type: Water, Psychic</h5>
+            <h5>Height: 16 m</h5>
+            <h5>Weight: 785 kg</h5>
+            <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
+              style="max-width:100%;height:auto;"> -->
           </div>
-          <div class="card-content">
-            <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
-              style="max-width:100%;height:auto;">
-          </div>
-          <div class="card-action">
-            <a id="ball" class="waves-effect waves-light btn">throw a ball</a>
-            <a class="waves-effect waves-light btn">throw a berry</a>
-            <a class="waves-effect waves-light btn">go near</a>
-            <a class="waves-effect waves-light btn">run away</a>
+          <section class="col s12"><h1></h1></section>
+          <div class="col s12 actionbtns-container">
+            <a id="ball" class="btn waves-effect waves-light container">throw a ball</a>
+            <a class="btn waves-effect waves-light container">throw a berry</a>
+            <a class="btn waves-effect waves-light container">go near</a>
+            <a class="btn waves-effect waves-light container">run away</a>
           </div>
         </div>
-      </div>
-      <div>
-        <a id="start-button" class="btn-floating btn-large waves-effect waves-orange teal tooltipped pulse"
-        data-position="bottom" data-tooltip="*insert epic adventure music*"><i
-        class="material-icons right">directions_run</i></a>
       </div>
     </div>
-  </div>
-    
+    <div class="col s12 l4 center container startbtn-container">
+      <a id="start-button" class="btn center waves-effect waves-orange teal tooltipped" data-position="bottom"
+        data-tooltip="*insert epic adventure music*"><i class="material-icons right">directions_run</i>Explore</a>
+    </div>
+  </div>  
     
     <div class="col s12 m7">
       <div class="card">
@@ -245,13 +245,29 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+
+    <!-- Modal Structure -->
+    <div id="modal3" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Music</a>
+>>>>>>> edfea130c3382ea8fee6f53be8cd2e5c004729ba
 
     <!--Modal Structure [Music]-->
     <div id="modal2" class="modal bottom-sheet">
       <div class="modal-content">
         <h4>Pokemon Music</h4>
         <audio controls>
-          <source src="assets/audio/Safari Zone.mp3" type="audio/mp3">
+          <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
           <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
         </audio>
   </div>      
