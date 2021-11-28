@@ -49,12 +49,12 @@ let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [
 
 caughtPokemonArr.forEach((pokemon, i) => {
   let listElem = document.createElement('li')
-  listElem.className = 'collection-item'
+  listElem.className = 'col s12 collection-item '
   listElem.innerHTML = `
-    <h5>${pokemon}</h5>      
-    <button class="btn btn-danger delete" data-index="${i}">X</button>
+    <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
+    
     `
-  document.getElementById('pokeList').append(listElem)
+  document.getElementById('list').append(listElem)
 })
 
 document.getElementById('start-button').addEventListener('click', event => {
