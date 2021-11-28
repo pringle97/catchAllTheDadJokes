@@ -1,58 +1,92 @@
-document.getElementById(`random`).addEventListener('click', event => {
+document.getElementById('random').addEventListener('click', event => {
   event.preventDefault()
 
-let randomNumber = Math.floor(Math.random() * 2)
-console.log(randomNumber)
-
-if (randomNumber === 0 ) {
-
+  let randomNumber = Math.floor(Math.random() * 3)
+  console.log(randomNumber)
+  const quoteElem = document.getElementById('quote')
+  const setupElem = document.getElementById('setup')
+  const jokeElem = document.getElementById('joke')
+  let i = 0
+  let speed = 10
   
-  axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
-  .then(res => {
-    console.log(res)
-    let punchLine = res.data.punchline
-    let setup = res.data.setup
-    document.getElementById('quote').innerHTML = ''
-    
-    const randomQuoteElem = document.createElement(`div`)
-    randomQuoteElem.innerHTML = 
-    `<div>
-    <h1> ${setup}</h1>
-    <h2>${punchLine}</h2>
-    </div
-    `
-    
-    document.getElementById('quote').append(randomQuoteElem)
   
+  if (randomNumber === 0 ) {
     
-  })
-  .catch(err => console.log(err))
+    axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
+    .then(res => {
+      console.log(res)
+        
+        let punchline = res.data.punchline
+        let setup = res.data.setup
+        let words = `${setup} - ${punchline}`
+        
+        setupElem.innerHTML = ''
+        quoteElem.innerHTML = ''
+        jokeElem.innerHTML = ''
+      
+        function typeWriter() {
+          if (i < words.length) {
+            document.getElementById("setup").innerHTML += words.charAt(i)
+            i++
+            setTimeout(typeWriter, speed)
+          }
+        }
 
-} else {
-    axios.get(`https://geek-jokes.sameerkumar.website/api?format=json`)
+        typeWriter()
+       
+    })
+  // .catch(err => console.log(err));
+
+  } else if (randomNumber === 1) {
+    // axios get for other joke
+    axios.get(`https://goquotes-api.herokuapp.com/api/v1/random?count=1`)
       .then(res => {
         console.log(res)
-        joke = res.data.joke
+        let quote = res.data.quotes[0].text     
 
-        document.getElementById('quote').innerHTML = ''
+        quoteElem.innerHTML = ''
+        setupElem.innerHTML = ''
+        jokeElem.innerHTML = ''
 
-        const randomQuoteElem = document.createElement(`div`)
-        randomQuoteElem.innerHTML =
-          `<div>
-          <h1>${joke}</h1>
-          </div
-          `
+        console.log(quote)
 
-        document.getElementById('quote').append(randomQuoteElem)
+        function typeWriter2() {
+          if (i < quote.length) {
+            document.getElementById("quote").innerHTML += quote.charAt(i)
+            i++
+            setTimeout(typeWriter2, speed)
+          }
+        }
 
+        typeWriter2()
 
       })
       .catch(err => console.log(err))
-    }
+  } else {
+    axios.get(`https://geek-jokes.sameerkumar.website/api?format=json`)
+      .then(res => {
+        console.log(res)
+        let joke = res.data.joke
+      
+        quoteElem.innerHTML = ''
+        setupElem.innerHTML = ''
+        jokeElem.innerHTML = ''
+
+        function typeWriter3() {
+          if (i < joke.length) {
+            document.getElementById("quote").innerHTML += joke.charAt(i)
+            i++
+            setTimeout(typeWriter3, speed)
+          }
+        }
+        
+        typeWriter3()
+         
+      })
+      .catch(err => console.log(err))
+  }
 
 })
-
-
 
 
 
