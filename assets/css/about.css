@@ -66,13 +66,8 @@
 
 }
 
-<<<<<<< HEAD:assets/css/pokedexPage.css
-/* .pokemonList {
-  b font-family: "Pokemon GB", Arial, sans-serif;
-=======
 .pokemonList {
   font-family: "Pokemon GB", Arial, sans-serif;
->>>>>>> 4f4a5ad38f2a6128d8e9491ea18c4c9fad76b903:pokedexPage.css
   border-radius: 2px;
   padding: 8px;
   line-height: 16px;
@@ -87,7 +82,7 @@
   height: 560px;
 
   overflow-y: scroll;
-} */
+}
 
 .pokemonInfo {
 
@@ -115,7 +110,7 @@ h4 {
 }
 
 /* text box for interact starts here */
-/* @font-face {
+@font-face {
   font-family: "Pokemon GB";
   src: url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.eot?") format("eot"),
     url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.woff") format("woff"),
@@ -123,11 +118,11 @@ h4 {
     url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.svg#PokemonGB") format("svg");
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 .pokemonInteract {
   font-size: 12px;
-  /* font-family: "Pokemon GB", Arial, sans-serif; */
+  font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 2px;
   padding: 8px;
   width: 250px;
@@ -785,7 +780,7 @@ input {
     width: 100%;
   }
 
-  /* h2 {
+  h2 {
     font-size: 24px;
   }
 
@@ -795,17 +790,17 @@ input {
 
   * {
     box-sizing: border-box;
-  } */
+  }
 }
 
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   body {
     width: 100%;
   }
-} */
+}
 
 .container {
-  display: grid;
+  display: flex;
   flex-direction: column;
 }
 
@@ -819,11 +814,9 @@ input {
 
 /* pokedex ends here */
 
-
 #interact {
   font-family: 'Press Start 2P', cursive;
-  padding: 10px;
-
+  padding: 10px
 }
 
 .pictures {
