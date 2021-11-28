@@ -1,3 +1,4 @@
+
 // const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
 
 let randomNumber = (Math.floor(Math.random()))
@@ -44,7 +45,20 @@ let pokemonNum = (Math.floor(Math.random() * 151) + 1)
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit()
 
+let pokeList = document.getElementById('pokeList')
 
+let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+// grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
+
+caughtPokemonArr.forEach((pokemon, i) => {
+  let listElem = document.createElement('li')
+  listElem.className = 'col s12 collection-item '
+  listElem.innerHTML = `
+    <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
+    
+    `
+  document.getElementById('list').append(listElem)
+})
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
@@ -98,10 +112,9 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(pokemon)
         let pokemonName = pokemon.name
         console.log(pokemonName)
-        let pokeList = document.getElementById('pokeList')
+        
 
-        let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
-        // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
+        
 
         console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
         // check caughtPokemonArr value in console
@@ -114,6 +127,16 @@ document.getElementById('start-button').addEventListener('click', event => {
 
         localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
+        caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+          const listElem = document.createElement('li')
+          listElem.className = 'collection-item'
+          listElem.innerHTML = `
+          <h5>${pokemonName}</h5>      
+          <button class="btn btn-danger delete" data-index="${i}">X</button>
+          `
+          document.getElementById('pokeList').append(listElem)
+        })
+
         // document.addEventListener('click', event => {
         //   if (event.target.id === 'saveRandom') {
         //     quotes.push(quote)
@@ -123,24 +146,24 @@ document.getElementById('start-button').addEventListener('click', event => {
         //   }
         // })
 
-        // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
-        //   const listElem = document.createElement('li')
-        //   listElem.className = 'collection-item'
-        //   listElem.innerHTML = `
-        //     <h5>${pokemonName}</h5>      
-        //     <button class="btn btn-danger delete" data-index="${i}">X</button>
-        //   `
-        //   document.getElementById('pokeList').append(listElem)
-        // })
+        
 
-        if (catchPokemon == 0) {
-          alert("you've caught a pokemon!")
-        }
+        // if (catchPokemon == 0) {
+        //   for (let i = 0; i < caughtPokemonArr.length; i++) {
+
+        //     pokeList.innerHTML += `
+        //     <li> ${caughtPokemonArr[i]} </li>
+        //     `
+        //   }
+        //   alert("you've caught a pokemon!")
+
+      
 
         // console.log(`Name: ${userName}`)
         // addToLocalStorage(userName.value)
         // userName.value = ''
       })
+    
   })
 })
 
@@ -173,6 +196,5 @@ document.getElementById('ball').addEventListener('click', event => {
   
 //   localStorage.setItem('caughtPokemonArr', caughtPokemonToString)
 // }
-
 
 
