@@ -258,7 +258,7 @@
     <div class="row">
       <div class="col s12">
         <div id="pokemonCard" class="card medium horizontal hoverable">
-          <div id="pokemon" class="card-image waves-effect waves-block valign-wrapper">
+          <div id="pokemonImg" class="card-image waves-effect waves-block valign-wrapper">
             <img src="assets/images/theSafariZone.jpg">
           </div>
           <div class="card-stacked medium">
@@ -271,16 +271,7 @@
           <div class="card-image">
             <span class="card-title"></span>
           </div>
-          <div class="card-content">
-            <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
-              style="max-width:100%;height:auto;">
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn">throw a ball</a>
-            <a class="waves-effect waves-light btn">throw a berry</a>
-            <a class="waves-effect waves-light btn">go near</a>
-            <a class="waves-effect waves-light btn">run away</a>
-          </div>
+
         </div>
       </div>
       <div>
@@ -298,11 +289,11 @@
         <span class="card-title"></span>
       </div>
       <div class="card-content">
-        <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
-          style="max-width:100%;height:auto;">
+        <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
+          style="max-width:100%;height:auto;"> -->
       </div>
       <div class="card-action">
-        <a class="waves-effect waves-light btn">throw a ball</a>
+        <a id="ball" class="waves-effect waves-light btn">throw a ball</a>
         <a class="waves-effect waves-light btn">throw a berry</a>
         <a class="waves-effect waves-light btn">go near</a>
         <a class="waves-effect waves-light btn">run away</a>
@@ -334,7 +325,7 @@
       <div class="modal-content">
         <h4>Pokemon Music</h4>
         <audio controls>
-          <source src="assets/audio/Safari Zone.mp3" type="audio/mp3">
+          <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
           <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
         </audio>
 
@@ -359,7 +350,7 @@
     </div>
   </div>
 
-  <!-- <script>
+  <script>
     function audioPlayer(){
       var currentSong = 0
       $("#audioPlayer")[0].src = $("playlist li a")[0]
@@ -386,7 +377,7 @@
     audioPlayer()
   }
   </script>
-   -->
+  
   <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/js/jokeScript.js"></script>
