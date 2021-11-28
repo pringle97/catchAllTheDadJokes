@@ -28,9 +28,10 @@ document.getElementById(`nathan`).addEventListener(`click`, () => {
 document.getElementById(`peter`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Peter Song`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.72m Weight: 65.77kg`
-  document.getElementById(`type-screen`).innerHTML =`Rock`
+  document.getElementById(`type-screen`).innerHTML =`Electric`
   document.getElementById(`id-screen`).innerHTML =`5`
- 
+  document.getElementById(`main-screen`).innerHTML =`<img class="pictures" src="peterPic1.jpg">`
+  
   
 
   let i = 0;
