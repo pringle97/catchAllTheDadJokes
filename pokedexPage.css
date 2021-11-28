@@ -404,7 +404,7 @@ input {
   background-color: var(--main-screen-bg-color);
   border: solid black 2px;
   border-radius: 5%;
-  background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png);
+  /* background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -463,8 +463,8 @@ input {
 }
 
 .green-screen {
-  width: 80px;
-  height: 30px;
+  width: 90px;
+  height: 40px;
   border-radius: 5px;
   border: solid black 2px;
   background-color: #3ab47d;
@@ -762,7 +762,7 @@ input {
 }
 
 .bottom-screens-container .right-panel-screen {
-  width: 64px;
+  width: 95px;
   height: 25px;
 }
 
