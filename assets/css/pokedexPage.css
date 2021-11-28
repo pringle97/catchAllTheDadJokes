@@ -814,8 +814,10 @@ input {
 
 /* pokedex ends here */
 
+
 #interact {
   font-family: 'Press Start 2P', cursive;
+  padding: 10px;
 
 }
 
@@ -823,4 +825,8 @@ input {
   height: 111px;
   width: 171px;
   border-radius: 5px;
+}
+
+#list {
+  font-family: 'Press Start 2P', cursive;
 }
