@@ -42,12 +42,12 @@ let addDecimal = (num) => {
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit()
 
-let pokemonNum = (Math.floor(Math.random() * 151) + 1)
+
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
+  let pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
-
   document.getElementById('pokemonImg').innerHTML = ''
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
@@ -59,7 +59,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       if (pokemon.types[1]) {
         document.getElementById('cardContent').classList.remove('hide')
         document.getElementById('pokemonImg').innerHTML = `
-        <img class="activator" src="${svg}" alt="${pokemon.species.name}">
+        <img src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
@@ -72,7 +72,7 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(pokemon.types[0].type.name)
         document.getElementById('cardContent').classList.remove('hide')
         document.getElementById('pokemonImg').innerHTML = `
-        <img class="activator" src ="${svg}" alt="${pokemon.species.name}">
+        <img src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
@@ -83,6 +83,61 @@ document.getElementById('start-button').addEventListener('click', event => {
       }
     })
   // .catch (err => console.log(err))
+  document.getElementById('ball').addEventListener('click', event => {
+
+    event.preventDefault()
+
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+      .then(res => {
+
+        const pokemon = res.data
+        console.log(pokemon)
+        let pokemonName = pokemon.name
+        console.log(pokemonName)
+        let pokeList = document.getElementById('pokeList')
+
+        let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+        // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
+
+        console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
+        // check caughtPokemonArr value in console
+
+        let catchPokemon = Math.floor(Math.random() * 1)
+        console.log(catchPokemon)
+
+        caughtPokemonArr.push(pokemonName)
+        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+
+        localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
+
+        // document.addEventListener('click', event => {
+        //   if (event.target.id === 'saveRandom') {
+        //     quotes.push(quote)
+        //     renderQuotes()
+        //     localStorage.setItem('quotes', JSON.stringify(quotes))
+        //     document.getElementById('showRandom').innerHTML = ''
+        //   }
+        // })
+
+        // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+        //   const listElem = document.createElement('li')
+        //   listElem.className = 'collection-item'
+        //   listElem.innerHTML = `
+        //     <h5>${pokemonName}</h5>      
+        //     <button class="btn btn-danger delete" data-index="${i}">X</button>
+        //   `
+        //   document.getElementById('pokeList').append(listElem)
+        // })
+
+        if (catchPokemon == 0) {
+          alert("you've caught a pokemon!")
+        }
+
+        // console.log(`Name: ${userName}`)
+        // addToLocalStorage(userName.value)
+        // userName.value = ''
+      })
+  })
 })
 
 
@@ -99,59 +154,5 @@ document.getElementById('start-button').addEventListener('click', event => {
 //   localStorage.setItem('caughtPokemonArr', caughtPokemonToString)
 // }
 
-document.getElementById('ball').addEventListener('click', event =>{
 
-  event.preventDefault()
-
-  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
-    .then(res => {
-
-      const pokemon = res.data
-      console.log(pokemon)
-      let pokemonName = pokemon.name
-      console.log(pokemonName)
-      let pokeList = document.getElementById('pokeList')
-
-      let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
-      // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
-      
-      console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
-      // check caughtPokemonArr value in console
-
-      let catchPokemon = Math.floor(Math.random() * 1)
-      console.log(catchPokemon)
-
-      caughtPokemonArr.push(pokemonName)
-      console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
-
-      localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
-
-      // document.addEventListener('click', event => {
-      //   if (event.target.id === 'saveRandom') {
-      //     quotes.push(quote)
-      //     renderQuotes()
-      //     localStorage.setItem('quotes', JSON.stringify(quotes))
-      //     document.getElementById('showRandom').innerHTML = ''
-      //   }
-      // })
-
-      // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
-      //   const listElem = document.createElement('li')
-      //   listElem.className = 'collection-item'
-      //   listElem.innerHTML = `
-      //     <h5>${pokemonName}</h5>      
-      //     <button class="btn btn-danger delete" data-index="${i}">X</button>
-      //   `
-      //   document.getElementById('pokeList').append(listElem)
-      // })
-
-        if (catchPokemon == 0) {
-          alert("you've caught a pokemon!")
-        }
-
-        // console.log(`Name: ${userName}`)
-        // addToLocalStorage(userName.value)
-        // userName.value = ''
-  })
-})
 

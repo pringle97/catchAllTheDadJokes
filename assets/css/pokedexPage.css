@@ -776,7 +776,7 @@ input {
     width: 100%;
   }
 
-  h2 {
+  /* h2 {
     font-size: 24px;
   }
 
@@ -786,17 +786,17 @@ input {
 
   * {
     box-sizing: border-box;
-  }
+  } */
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   body {
     width: 100%;
   }
-}
+} */
 
 .container {
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 
