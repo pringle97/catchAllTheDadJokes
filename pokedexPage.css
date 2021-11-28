@@ -813,3 +813,15 @@ input {
 }
 
 /* pokedex ends here */
+
+
+#interact {
+  font-family: 'Press Start 2P', cursive;
+
+}
+
+.pictures {
+  height: 111px;
+  width: 171px;
+  border-radius: 5px;
+}
