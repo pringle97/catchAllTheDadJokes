@@ -1,9 +1,10 @@
+
 // const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
 
 let randomNumber = (Math.floor(Math.random()))
 
 //generating number between 1 and 100 
-let x = Math.floor((Math.random() * 100) +1);
+let x = Math.floor((Math.random() * 100) +1)
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
@@ -32,117 +33,148 @@ console.log(x)
 
 
 let capitalize = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 let addDecimal = (num) => {
-  return (num / 10).toFixed(1);
+  return (num / 10).toFixed(1)
 }
 
 // the one mcss function to rule them all (conveniently initializes everything so components work)
-M.AutoInit();
+M.AutoInit()
 
+let pokeList = document.getElementById('pokeList')
+
+let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+// grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
+
+caughtPokemonArr.forEach((pokemon, i) => {
+  let listElem = document.createElement('li')
+  listElem.className = 'col s12 collection-item '
+  listElem.innerHTML = `
+    <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
+    
+    `
+  document.getElementById('list').append(listElem)
+})
 
 document.getElementById('start-button').addEventListener('click', event => {
-  event.preventDefault();
+  event.preventDefault()
   let pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
-
-  document.getElementById('pokemon').innerHTML = '';
+  document.getElementById('pokemonImg').innerHTML = ''
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
-      const pokemon = res.data;
-      console.log(pokemon);
-      let svg = pokemon.sprites.other.dream_world.front_default;
+      const pokemon = res.data
+      console.log(pokemon)
+      let svg = pokemon.sprites.other.dream_world.front_default
 
       if (pokemon.types[1]) {
-        document.getElementById('cardContent').classList.remove('hide');
-        document.getElementById('pokemon').innerHTML = `
-        <img class="activator" src="${svg}" alt="${pokemon.species.name}">
-        `;
+        document.getElementById('cardContent').classList.remove('hide')
+        document.getElementById('pokemonImg').innerHTML = `
+        <img src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
+        `
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
         <h5>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h5>
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
         <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-        `;
+        `
       } else {
-        console.log(pokemon);
-        console.log(pokemon.types[0].type.name);
-        document.getElementById('cardContent').classList.remove('hide');
-        document.getElementById('pokemon').innerHTML = `
-        <img class="activator" src ="${svg}" alt="${pokemon.species.name}">
-        `;
+        console.log(pokemon)
+        console.log(pokemon.types[0].type.name)
+        document.getElementById('cardContent').classList.remove('hide')
+        document.getElementById('pokemonImg').innerHTML = `
+        <img src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
+        `
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
         <h5>Type: ${capitalize(pokemon.types[0].type.name)}</h5>
         <h5>Height: ${addDecimal(pokemon.height)} m</h5>
         <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-        `;
+        `
       }
     })
   // .catch (err => console.log(err))
+  document.getElementById('ball').addEventListener('click', event => {
+
+    event.preventDefault()
+
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+      .then(res => {
+
+        const pokemon = res.data
+        console.log(pokemon)
+        let pokemonName = pokemon.name
+        console.log(pokemonName)
+        
+
+        
+
+        console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
+        // check caughtPokemonArr value in console
+
+        let catchPokemon = Math.floor(Math.random() * 1)
+        console.log(catchPokemon)
+
+        caughtPokemonArr.push(pokemonName)
+        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+
+        localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
+
+        caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+          const listElem = document.createElement('li')
+          listElem.className = 'collection-item'
+          listElem.innerHTML = `
+          <h5>${pokemonName}</h5>      
+          <button class="btn btn-danger delete" data-index="${i}">X</button>
+          `
+          document.getElementById('pokeList').append(listElem)
+        })
+
+        // document.addEventListener('click', event => {
+        //   if (event.target.id === 'saveRandom') {
+        //     quotes.push(quote)
+        //     renderQuotes()
+        //     localStorage.setItem('quotes', JSON.stringify(quotes))
+        //     document.getElementById('showRandom').innerHTML = ''
+        //   }
+        // })
+
+        
+
+        // if (catchPokemon == 0) {
+        //   for (let i = 0; i < caughtPokemonArr.length; i++) {
+
+        //     pokeList.innerHTML += `
+        //     <li> ${caughtPokemonArr[i]} </li>
+        //     `
+        //   }
+        //   alert("you've caught a pokemon!")
+
+      
+
+        // console.log(`Name: ${userName}`)
+        // addToLocalStorage(userName.value)
+        // userName.value = ''
+      })
+    
+  })
 })
 
 
-let pokemon = document.getElementById('pokemon')
+// function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
 
-document.getElementById('ball').addEventListener('click', event =>{
-  event.preventDefault();
-  let catchPokemon = Math.floor(Math.random() * 1)
-  console.log(catchPokemon)
-   if (catchPokemon == 0) {
-     alert("you've caught a pokemon!")
-   }
-  console.log(`Name: ${userName}`);
-  addToLocalStorage(userName.value);
-  userName.value = '';
-});
+//   event.preventDefault
+  
+//   // add new poke to array
+//   caughtPokemon.push(pokedexObj)
 
-const userName = document.getElementById('pokemon');
-let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
-
-function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
-  event.preventDefault
-  //construct pokemon object.
-  var pokedexObj = {
-    pokemon: newlyCaughtPokemon,
-  };
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-}
-// {/* <span class="card-title">Card Title</span>
-//               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
+//   // stringify the <array></array>
+//   var caughtPokemonToString = JSON.stringify(caughtPokemon)
+  
+//   localStorage.setItem('caughtPokemonArr', caughtPokemonToString)
+// }
 
 
-
-
-
-
-// document.getElementById('start-button').addEventListener('click', event => {
-//   event.preventDefault()
-
-
-//   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
-//     .then(res => {
-//       const pokemon = res.data
-//       console.log(pokemon)
-//       if (pokemon.types[0].type.name) {
-
-//       }
-//       document.getElementById('pokemon').
-//         innerHTML = `
-//     <h1>Pokemon Name: ${capitalize(pokemon.species.name)}</h1>
-//     <h2>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h2 >
-//     <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-//     <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
-//     <img src = "${pokemon.sprites.front_default}" alt="${pokemon.species.name}">
-//     `
-//       console.log(pokemon.sprites.front_default)
-//     })
-//     .catch(err => console.log(err))
-// })
