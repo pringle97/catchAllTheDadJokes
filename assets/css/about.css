@@ -791,6 +791,11 @@ input {
   * {
     box-sizing: border-box;
   }
+
+  .pokemonList {
+    height: 300px;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -828,3 +833,4 @@ input {
 #list {
   font-family: 'Press Start 2P', cursive;
 }
+
