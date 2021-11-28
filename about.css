@@ -463,8 +463,8 @@ input {
 }
 
 .green-screen {
-  width: 80px;
-  height: 30px;
+  width: 90px;
+  height: 40px;
   border-radius: 5px;
   border: solid black 2px;
   background-color: #3ab47d;
@@ -762,7 +762,7 @@ input {
 }
 
 .bottom-screens-container .right-panel-screen {
-  width: 64px;
+  width: 95px;
   height: 25px;
 }
 
@@ -813,3 +813,8 @@ input {
 }
 
 /* pokedex ends here */
+
+#interact {
+  font-family: 'Press Start 2P', cursive;
+
+}
