@@ -66,6 +66,7 @@
 
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:assets/css/pokedexPage.css
 /* .pokemonList {
   b font-family: "Pokemon GB", Arial, sans-serif;
@@ -73,6 +74,10 @@
 .pokemonList {
   font-family: "Pokemon GB", Arial, sans-serif;
 >>>>>>> 4f4a5ad38f2a6128d8e9491ea18c4c9fad76b903:pokedexPage.css
+=======
+.pokemonList {
+  font-family: "Pokemon GB", Arial, sans-serif;
+>>>>>>> be91f13dc7d41af4d4113c007bd1cc241c98e1a0
   border-radius: 2px;
   padding: 8px;
   line-height: 16px;
@@ -87,17 +92,17 @@
   height: 560px;
 
   overflow-y: scroll;
-} */
+}
 
 .pokemonInfo {
 
-  margin: 75px 75px 25px
+  margin: 75px 75px 25px;
 }
 
 .pokemonInteract {
 
   border: solid black;
-  margin: 75px
+  margin: 75px;
 }
 
 .page-footer {

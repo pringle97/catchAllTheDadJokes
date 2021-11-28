@@ -54,14 +54,17 @@
           <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
               style="max-width:100%;height:auto;"> -->
         </div>
-        <section class="col s12">
-          <h1></h1>
-        </section>
-        <div class="col s12 actionbtns-container">
-          <a id="ball" class="btn waves-effect waves-light container">throw a ball</a>
-          <a class="btn waves-effect waves-light container">throw a berry</a>
-          <a class="btn waves-effect waves-light container">go near</a>
-          <a class="btn waves-effect waves-light container">run away</a>
+      </div>
+    </div>
+    <div class="col s12 l4 center container startbtn-container">
+      <a id="start-button" class="btn center waves-effect waves-orange teal"><i class="material-icons right">directions_run</i>Explore</a>
+    </div>
+  </div>  
+    
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <span class="card-title"></span>
         </div>
       </div>
     </div>
@@ -274,10 +277,54 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="assets/js/jokeScript.js"></script>
 <script src="assets/js/script.js"></script>
+=======
+<footer class="page-footer">
+  <div class="container">
+
+    <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
+    <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+  </div>
+
+</footer>
+
+  <script>
+    function audioPlayer(){
+      var currentSong = 0
+      $("#audioPlayer")[0].src = $("playlist li a")[0]
+      $("#audioPlayer")[0].play()
+      $("playlist li a").click(function(e){
+        e.preventDefault()
+        $("audioPlayer")[0].src = this
+        $("audioPlayer")[0].play()
+        $("playlist li").removeClass("current-song")
+        currentSong = $(this).parent().index()
+        $(this).parent().addClass("current-song")
+      })
+      
+      $("#audioPlayer")[0].addEventListener("ended", function(){
+        currentSong++
+        if(currentSong == $("playlist li a").length)
+        currentSong = 0
+        $("#playlist li").removeClass("current-song")
+        $("playlist li:eq("+currentSong+")").addClass("current-song")
+        $("audioPlayer")[0].src = $("#playlist li a") [currentSong].href
+        $("#audioPlayer")[0].play()
+      })
+      
+    audioPlayer()
+  }
+  </script>
+  
+  <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/jokeScript.js"></script>
+  <script src="assets/js/script.js"></script>
+>>>>>>> be91f13dc7d41af4d4113c007bd1cc241c98e1a0
 </body>
 
 </html>
