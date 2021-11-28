@@ -161,24 +161,6 @@ document.getElementById('ball').addEventListener('click', event => {
     });
 })
 
-let pokemon = document.getElementById('pokemon')
-
-// const pokemon.species.name = document.getElementById('pokemon');
-
-
-function addToLocalStorage(caughtPokemon, newlyCaughtPokemon) {
-  event.preventDefault
-  //construct pokemon object.
-  var pokedexObj = {
-    pokemon: newlyCaughtPokemon,
-  };
-  console.log(pokedexObj)
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-}
 // function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
 
 //   event.preventDefault
