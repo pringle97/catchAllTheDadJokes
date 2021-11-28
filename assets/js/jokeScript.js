@@ -1,48 +1,34 @@
-// let i = 0;
-// let jokeSetup = `${setup}`;
-// let speed = 50;
-
-// function typeWriter() {
-//   if (i < jokeSetup.length) {
-//     document.getElementById("quote").innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(typeWriter, speed);
-//   }
-// }
-
-
-
 document.getElementById('random').addEventListener('click', event => {
-  event.preventDefault();
+  event.preventDefault()
 
-  let randomNumber = Math.floor(Math.random() * 3);
-  console.log(randomNumber);
-  const quoteElem = document.getElementById('quote');
-  const setupElem = document.getElementById('setup');
-  const jokeElem = document.getElementById('joke');
-  let i = 0;
-  let speed = 10;
+  let randomNumber = Math.floor(Math.random() * 3)
+  console.log(randomNumber)
+  const quoteElem = document.getElementById('quote')
+  const setupElem = document.getElementById('setup')
+  const jokeElem = document.getElementById('joke')
+  let i = 0
+  let speed = 10
   
   
   if (randomNumber === 0 ) {
     
     axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
     .then(res => {
-      console.log(res);
+      console.log(res)
         
-        let punchline = res.data.punchline;
-        let setup = res.data.setup;
+        let punchline = res.data.punchline
+        let setup = res.data.setup
         let words = `${setup} - ${punchline}`
         
-        setupElem.innerHTML = '';
-        quoteElem.innerHTML = '';
-        jokeElem.innerHTML = '';
+        setupElem.innerHTML = ''
+        quoteElem.innerHTML = ''
+        jokeElem.innerHTML = ''
       
         function typeWriter() {
           if (i < words.length) {
-            document.getElementById("setup").innerHTML += words.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
+            document.getElementById("setup").innerHTML += words.charAt(i)
+            i++
+            setTimeout(typeWriter, speed)
           }
         }
 
@@ -58,17 +44,17 @@ document.getElementById('random').addEventListener('click', event => {
         console.log(res)
         let quote = res.data.quotes[0].text     
 
-        quoteElem.innerHTML = '';
-        setupElem.innerHTML = '';
-        jokeElem.innerHTML = '';
+        quoteElem.innerHTML = ''
+        setupElem.innerHTML = ''
+        jokeElem.innerHTML = ''
 
         console.log(quote)
 
         function typeWriter2() {
           if (i < quote.length) {
-            document.getElementById("quote").innerHTML += quote.charAt(i);
-            i++;
-            setTimeout(typeWriter2, speed);
+            document.getElementById("quote").innerHTML += quote.charAt(i)
+            i++
+            setTimeout(typeWriter2, speed)
           }
         }
 
@@ -79,29 +65,28 @@ document.getElementById('random').addEventListener('click', event => {
   } else {
     axios.get(`https://geek-jokes.sameerkumar.website/api?format=json`)
       .then(res => {
-        console.log(res);
-        let joke = res.data.joke;
-        
-        quoteElem.innerHTML = '';
-        setupElem.innerHTML = '';
-        jokeElem.innerHTML = '';
+        console.log(res)
+        let joke = res.data.joke
+      
+        quoteElem.innerHTML = ''
+        setupElem.innerHTML = ''
+        jokeElem.innerHTML = ''
 
         function typeWriter3() {
           if (i < joke.length) {
-            document.getElementById("quote").innerHTML += joke.charAt(i);
-            i++;
-            setTimeout(typeWriter3, speed);
+            document.getElementById("quote").innerHTML += joke.charAt(i)
+            i++
+            setTimeout(typeWriter3, speed)
           }
         }
         
-        typeWriter3();
+        typeWriter3()
          
       })
       .catch(err => console.log(err))
   }
 
 })
-
 
 
 
