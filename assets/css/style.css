@@ -141,9 +141,9 @@
   .gridWrapper {
     grid-template-columns: 2fr 2fr;
     grid-template-areas:
-      "title   title"
-      "startBtn startBtn"
-      "pokeImg pokeStats"
+      "title      title"
+      "startBtn   startBtn"
+      "pokeImg    pokeStats"
       "actionBtns actionBtns";
   }
 }
