@@ -2,15 +2,32 @@
 // const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
 
 let randomNumber = (Math.floor(Math.random()))
-
+let capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 //generating number between 1 and 100 
-let x = Math.floor((Math.random() * 100) +1)
+let x = Math.floor((Math.random() * 100) + 1)
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+
+let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
+
+caughtPokemonArr.forEach((pokemon,i) => {
+  console.log("We are here");caughtPokemonArr
+  let listElem = document.createElement('li')
+  listElem.className = 'collection-item'
+  listElem.innerHTML = `
+          <h5>${capitalize(pokemon)}</h5>      
+          <button class="btn btn-danger delete" data-index="${i}">X</button>
+        `
+  document.getElementById('pokeList').append(listElem)
+})
 
 // function catchPokemon() {
 //   document.getElementById('ball').addEventListener('click', event => {
@@ -24,7 +41,7 @@ let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 //   })
 // }
 
-//catching pokemon
+
 //reset function that takes you to next poke or main page
 //click event to release poke using reset function
 //click event if poke runs away using reset function
@@ -33,9 +50,7 @@ let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
 
 
-let capitalize = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
+
 
 let addDecimal = (num) => {
   return (num / 10).toFixed(1)
@@ -45,19 +60,21 @@ let pokemonNum = (Math.floor(Math.random() * 151) + 1)
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit()
 
+
 let pokeList = document.getElementById('pokeList')
 
-let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+// let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 
-caughtPokemonArr.forEach((pokemon, i) => {
-  let listElem = document.createElement('li')
-  listElem.className = 'col s12 collection-item'
-  listElem.innerHTML = `
-    <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
-    `
-  document.getElementById('list').append(listElem)
-})
+// caughtPokemonArr.forEach((pokemon, i) => {
+//   let listElem = document.createElement('li')
+//   listElem.className = 'col s12 collection-item '
+//   listElem.innerHTML = `
+//     <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
+    
+//     `
+//   document.getElementById('list').append(listElem)
+// })
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
@@ -111,6 +128,10 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(pokemon)
         let pokemonName = pokemon.name
         console.log(pokemonName)
+        let pokeList = document.getElementById('pokeList')
+
+        let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+        // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
         
 
         
@@ -126,15 +147,46 @@ document.getElementById('start-button').addEventListener('click', event => {
 
         localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
-        caughtPokemonArr.forEach((caughtPokemonArr, i) => {
-          let listElem = document.createElement('li')
-          listElem.className = 'collection-item'
-          listElem.innerHTML = `
-          <h5>${pokemonName}</h5>      
-          <button class="btn btn-danger delete" data-index="${i}">X</button>
-          `
-          document.getElementById('pokeList').append(listElem)
-        })
+        // document.addEventListener('click', event => {
+        //   if (event.target.id === 'saveRandom') {
+        //     quotes.push(quote)
+        //     renderQuotes()
+        //     localStorage.setItem('quotes', JSON.stringify(quotes))
+        //     document.getElementById('showRandom').innerHTML = ''
+        //   }
+        // })
+
+        // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+        //   console.log("We are here");
+        //   const listElem = document.createElement('li')
+        //   listElem.className = 'collection-item'
+        //   listElem.innerHTML = `
+        //   <h5>${pokemonName}</h5>      
+        //   <button class="btn btn-danger delete" data-index="${i}">X</button>
+        // `
+        //   document.getElementById('pokeList').append(listElem)
+        // }) //moving down to see if it works outside of function
+
+
+
+        if (catchPokemon == 0) {
+          alert("you've caught a pokemon!")
+        }
+
+        caughtPokemonArr.push(pokemonName)
+        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+
+        // localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
+
+        // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+        //   const listElem = document.createElement('li')
+        //   listElem.className = 'collection-item'
+        //   listElem.innerHTML = `
+        //   <h5>${pokemonName}</h5>      
+        //   <button class="btn btn-danger delete" data-index="${i}">X</button>
+        //   `
+        //   document.getElementById('pokeList').append(listElem)
+        // })
 
         // document.addEventListener('click', event => {
         //   if (event.target.id === 'saveRandom') {
@@ -161,10 +213,64 @@ document.getElementById('start-button').addEventListener('click', event => {
         // console.log(`Name: ${userName}`)
         // addToLocalStorage(userName.value)
         // userName.value = ''
+
       })
+   })
     
-  })
-})
+});
+  // .catch (err => console.log(err))
+
+
+
+// document.getElementById('ball').addEventListener('click', event =>{
+//   event.preventDefault();
+//   let catchPokemon = Math.floor(Math.random() * 1)
+//   console.log(catchPokemon)
+//    if (catchPokemon == 0) {
+//      document.getElementById('modal2').addEventListener("click", event => {
+
+//      })
+//    }
+// });
+
+
+
+
+
+
+
+
+function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+  //construct pokemon object.
+  var pokedexObj = {
+    name: alreadyCaughtPokemon,
+    score: newlyCaughtPokemon,
+  };
+  // add new poke to array
+  caughtPokemon.push(pokedexObj);
+  // stringify the <array></array>
+  var caughtPokemonToString = JSON.stringify(caughtPokemon);
+  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+}
+// {/* <span class="card-title">Card Title</span>
+//               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
+
+
+
+// function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+
+//   event.preventDefault
+
+//   // add new poke to array
+//   caughtPokemon.push(pokedexObj)
+
+//   // stringify the <array></array>
+//   var caughtPokemonToString = JSON.stringify(caughtPokemon)
+
+//   localStorage.setItem('caughtPokemonArr', caughtPokemonToString)
+// }
+
+
 
 document.getElementById('ball').addEventListener('click', event => {
   event.preventDefault();
