@@ -1,6 +1,3 @@
-
-// const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
-
 let randomNumber = (Math.floor(Math.random()))
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -14,44 +11,6 @@ let runAway = document.getElementById('run-away')
 console.log(x)
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
 
-let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
-
-let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
-
-caughtPokemonArr.forEach((pokemon,i) => {
-  console.log("We are here");caughtPokemonArr
-  let listElem = document.createElement('li')
-  listElem.className = 'collection-item'
-  listElem.innerHTML = `
-          <h5>${capitalize(pokemon)}</h5>      
-          <button class="btn btn-danger delete" data-index="${i}">X</button>
-        `
-  document.getElementById('pokeList').append(listElem)
-})
-
-// function catchPokemon() {
-//   document.getElementById('ball').addEventListener('click', event => {
-//     event.preventDefault
-//     //need to make variables for pokemon name or caught pokemon in the placeholder
-//     console.log(`pokemon: ${placeholder.value}`);
-//     addToLocalStorage(placeholder.value);
-//     placeholder.value = '';
-//     if (x <= 50) {
-//     }
-//   })
-// }
-
-
-//reset function that takes you to next poke or main page
-//click event to release poke using reset function
-//click event if poke runs away using reset function
-//if you catch, take player to pokedex
-//local storage saves poke and we will pull from storage to display 
-
-
-
-
-
 let addDecimal = (num) => {
   return (num / 10).toFixed(1)
 }
@@ -59,23 +18,6 @@ let addDecimal = (num) => {
 let pokemonNum = (Math.floor(Math.random() * 151) + 1)
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit()
-
-
-let pokeList = document.getElementById('pokeList')
-
-// let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
-// grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
-
-caughtPokemonArr.forEach((pokemon, i) => {
-  let listElem = document.createElement('ul')
-  listElem.className = 'collection-item waves-effect z-depth-1'
-  listElem.innerHTML = `
-    <a class="btn-flat"><h6>${pokemon}</h6></a>
-    <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
-    `
-  document.getElementById('pokeList').append(listElem)
-})
-
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
@@ -85,7 +27,7 @@ document.getElementById('start-button').addEventListener('click', event => {
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
-      const pokemon = res.data
+      let pokemon = res.data
       console.log(pokemon)
       let svg = pokemon.sprites.other.dream_world.front_default
 
@@ -210,18 +152,18 @@ document.getElementById('start-button').addEventListener('click', event => {
 
 
 
-function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
-  //construct pokemon object.
-  var pokedexObj = {
-    name: alreadyCaughtPokemon,
-    score: newlyCaughtPokemon,
-  };
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-}
+// function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+//   //construct pokemon object.
+//   var pokedexObj = {
+//     name: alreadyCaughtPokemon,
+//     score: newlyCaughtPokemon,
+//   };
+//   // add new poke to array
+//   caughtPokemon.push(pokedexObj);
+//   // stringify the <array></array>
+//   var caughtPokemonToString = JSON.stringify(caughtPokemon);
+//   localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+// }
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
