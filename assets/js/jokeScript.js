@@ -3,7 +3,7 @@ let pokeList = document.getElementById('pokeList')
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
 
-
+M.AutoInit()
 
 caughtPokemonArr.forEach((pokemon, i) => {
   let listElem = document.createElement('ul')
