@@ -1,0 +1,227 @@
+:root {
+  --main-bg-color: #fe0065;
+  --secondary-bg-color: #f2f2f2;
+  --main-screen-bg-color: #98cb98;
+  --secondary-screen-bg-color: #9e9d9d;
+  --main-buttons-color: #585858;
+  --square-buttons-color: #7ca9f7;
+}
+
+.nav-wrapper {
+  background: linear-gradient(90deg, rgba(255, 27, 27, 1) 15%, rgba(255, 245, 0, 1) 50%, rgba(31, 53, 255, 1) 85%);
+  padding: 0 2% 2% 2%;
+}
+
+.modal {
+  width: 70%;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.yellow {
+  background-color: #fecb65;
+}
+
+.green {
+  background-color: #32cb65;
+}
+
+.blue {
+  background-color: #3298cb;
+}
+
+.light-blue {
+  background-color: #85bdfe;
+}
+
+.light-red {
+  background-color: #fe98cb;
+}
+
+.light-yellow {
+  background-color: #fefecb;
+}
+
+.light-green {
+  background-color: #98fe00;
+}
+
+.page-footer {
+  background-color: #70c0a0;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.gridWrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "title"
+    "startBtn"
+    "pokeImg"
+    "pokeStats"
+    "actionBtns";
+  border: 2px solid black;
+}
+
+.title {
+  grid-area: title;
+  margin: 10px 0 10px 0;
+  border: 2px solid red;
+}
+
+/* .main-content {
+  display: grid;
+  grid-area: ;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(450px, auto);
+  padding: 10px 0 10px 0;
+  border: 2px solid blue;
+} */
+
+/* .column1 {
+  grid-area: pokeImg;
+  height: 450px;
+  border: 2px solid purple;
+} */
+
+.card1 {
+  border: 2px solid green;
+}
+
+#pokemonImg {
+  grid-area: pokeImg;
+  border: 2px solid purple;
+}
+
+#pokemonCard {
+  padding: 5px 0 5px 0;
+}
+
+#pokemon {
+  padding: 1% 0 0 1%;
+}
+
+#cardContent {
+  grid-area: pokeStats;
+  margin: 5px 0 10px 0;
+  padding-bottom: 10px;
+  border: 2px solid brown;
+}
+
+.actionbtns-container {
+  grid-area: actionBtns;
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
+  gap: 30px 10px;
+  border: 2px solid rosybrown;
+}
+
+.startbtn-container {
+  grid-area: startBtn;
+  border: 2px solid hotpink;
+}
+
+/* .column2 {
+  border: 2px solid chocolate;
+} */
+
+@media (min-width: 500px) {
+  .gridWrapper {
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+      "title      title"
+      "startBtn   startBtn"
+      "pokeImg    pokeStats"
+      "actionBtns actionBtns";
+  }
+}
+
+/* bottom screens */
+
+.bottom-screens-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-screens-container .right-panel-screen {
+  width: 64px;
+  height: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  #pokedex {
+    width: 100%;
+    flex-flow: wrap;
+  }
+
+  #left-panel {
+    width: 100%;
+  }
+
+  #right-panel {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-action {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hide {
+  display: none;
+}
+
+#pokemonCard {
+  padding: 1% 0 1% 1%;
+}
+
+#pokemon {
+  padding: 1% 0 0 1%;
+}
+
+#cardContent {
+  margin-top: 50px;
+}
+/* h2 {
+  font-weight: bold;
+} */
+
+
+h3 {
+  text-align: center;
+  background-color: #70c0a0;
+  color: white;
+}
+
