@@ -12,7 +12,7 @@ let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
-
+let pokeList = document.getElementById('pokeList')
 let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
 
 let caughtPokemon = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [];
@@ -59,7 +59,7 @@ let addDecimal = (num) => {
 M.AutoInit()
 
 
-let pokeList = document.getElementById('pokeList')
+
 
 // let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
@@ -169,8 +169,8 @@ document.getElementById('start-button').addEventListener('click', event => {
           alert("you've caught a pokemon!")
         }
 
-        caughtPokemonArr.push(pokemonName)
-        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+        // caughtPokemonArr.push(pokemonName)
+        // console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
 
         // localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
@@ -236,18 +236,18 @@ document.getElementById('start-button').addEventListener('click', event => {
 
 
 
-function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
-  //construct pokemon object.
-  var pokedexObj = {
-    name: alreadyCaughtPokemon,
-    score: newlyCaughtPokemon,
-  };
-  // add new poke to array
-  caughtPokemon.push(pokedexObj);
-  // stringify the <array></array>
-  var caughtPokemonToString = JSON.stringify(caughtPokemon);
-  localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
-}
+// function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
+//   //construct pokemon object.
+//   var pokedexObj = {
+//     name: alreadyCaughtPokemon,
+//     score: newlyCaughtPokemon,
+//   };
+//   // add new poke to array
+//   caughtPokemon.push(pokedexObj);
+//   // stringify the <array></array>
+//   var caughtPokemonToString = JSON.stringify(caughtPokemon);
+//   localStorage.setItem('caughtPokemonArr', caughtPokemonToString);
+// }
 // {/* <span class="card-title">Card Title</span>
 //               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 
