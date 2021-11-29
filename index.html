@@ -16,7 +16,7 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center start-button"><img src="assets/images/snorlax.svg" width="120"></a>
+      <a href="#!" class="brand-logo center start-button"><img src="assets/images/safari-ball.png" width="100px"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
@@ -32,38 +32,40 @@
     <li><a href="about.html">About Us</a></li>
   </ul>
 
-  <div class="gridWrapper">
-    <div class="title center">
+  <div class="container gridContainer">
+    <section class="title center">
       <h1>Welcome to the Safari Zone!</h1>
-    </div>
-    <!-- <div class="main-content"> -->
-    <!-- <div class="column1"> -->
-    <div class="center container startbtn-container">
-      <a id="start-button" class="btn center waves-effect waves-orange teal"><i class="material-icons right">directions_run</i>Explore</a>
-    </div>
-    <div id="pokemonCard" class="card card1">
-      <div id="pokemonImg" class="card-image">
-        <img src="assets/images/slobro.png">
+    </section>
+    <div class="row row1 valign-wrapper">
+      <div class="col s12 l6 column1">
+        <div id="pokemonCard" class="card card1 center">
+          <div id="pokemonImg" class="card-image waves-effect waves-block container">
+            <img src="assets/images/slobro.png">
+          </div>
+            <!-- <div id="cardContent" class="card-content flow-text"></div> -->
+        </div>
       </div>
-        <!-- <div id="cardContent" class="card-content flow-text"></div> -->
+        <div class="col s12 l6 column2">
+          <div id="cardContent" class="col s12 card-content center">
+            <h2><strong>Slowbro</strong></h2>
+            <h5>Type: Water, Psychic</h5>
+            <h5>Height: 16 m</h5>
+            <h5>Weight: 785 kg</h5>
+            <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
+              style="max-width:100%;height:auto;"> -->
+          </div>
+          <section class="col s12"><h1></h1></section>
+          <div class="col s12 actionbtns-container">
+            <a id="ball" class="btn waves-effect waves-light container">throw a ball</a>
+            <a class="btn waves-effect waves-light container">throw a berry</a>
+            <a class="btn waves-effect waves-light container">go near</a>
+            <a class="btn waves-effect waves-light container">run away</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- </div> -->
-    <!-- <div class="column2"> -->
-    <div id="cardContent" class="card-content center">
-      <h2><strong>Slowbro</strong></h2>
-      <h5>Type: Water, Psychic</h5>
-      <h5>Height: 16 m</h5>
-      <h5>Weight: 785 kg</h5>
-      <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
-        style="max-width:100%;height:auto;"> -->
-    </div>
-    <!-- </div> -->
-    <!-- <section class=""><h1></h1></section> -->
-    <div class=" actionbtns-container">
-      <a id="ball" class="btn waves-effect waves-light container">throw a ball</a>
-      <a class="btn waves-effect waves-light container">throw a berry</a>
-      <a class="btn waves-effect waves-light container">go near</a>
-      <a class="btn waves-effect waves-light container">run away</a>
+    <div class="col s12 l4 center container startbtn-container">
+      <a id="start-button" class="btn center waves-effect waves-orange teal"><i class="material-icons right">directions_run</i>Explore</a>
     </div>
   </div>  
     
@@ -322,7 +324,7 @@
   
   <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- <script src="assets/js/jokeScript.js"></script> -->
+  <script src="assets/js/jokeScript.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 

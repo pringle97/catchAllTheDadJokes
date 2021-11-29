@@ -51,15 +51,14 @@ let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 
 caughtPokemonArr.forEach((pokemon, i) => {
-  let listElem = document.createElement('ul')
-  listElem.className = 'collection-item waves-effect z-depth-1'
+  let listElem = document.createElement('li')
+  listElem.className = 'col s12 collection-item '
   listElem.innerHTML = `
-    <a class="btn-flat"><h6>${pokemon}</h6></a>
-    <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
+    <h6>${pokemon}</h6><button class="btn-small btn-danger delete right" data-index="${i}"><i class="material-icons">cancel</i></button></a>
+    
     `
-  document.getElementById('pokeList').append(listElem)
+  document.getElementById('list').append(listElem)
 })
-
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
@@ -128,15 +127,15 @@ document.getElementById('start-button').addEventListener('click', event => {
 
         localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
-        // caughtPokemonArr.forEach((caughtPokemonArr, i) => {
-        //   let listElem = document.createElement('li')
-        //   listElem.className = 'collection-item'
-        //   listElem.innerHTML = `
-        //   <h5>${pokemonName}</h5>      
-        //   <button class="btn btn-danger delete" data-index="${i}">X</button>
-        //   `
-        //   document.getElementById('pokeList').append(listElem)
-        // })
+        caughtPokemonArr.forEach((caughtPokemonArr, i) => {
+          const listElem = document.createElement('li')
+          listElem.className = 'collection-item'
+          listElem.innerHTML = `
+          <h5>${pokemonName}</h5>      
+          <button class="btn btn-danger delete" data-index="${i}">X</button>
+          `
+          document.getElementById('pokeList').append(listElem)
+        })
 
         // document.addEventListener('click', event => {
         //   if (event.target.id === 'saveRandom') {
