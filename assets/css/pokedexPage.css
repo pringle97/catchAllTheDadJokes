@@ -85,7 +85,6 @@
 }
 
 .pokemonInfo {
-
   margin: 75px 75px 25px;
 }
 
@@ -769,16 +768,16 @@ input {
 @media only screen and (max-width: 600px) {
   #pokedex {
     width: 100%;
-    flex-flow: wrap;
+    flex-flow: inline;
   }
 
-  #left-panel {
+  /* #left-panel {
     width: 100%;
   }
 
   #right-panel {
     width: 100%;
-  }
+  } */
 
   /* h2 {
     font-size: 24px;

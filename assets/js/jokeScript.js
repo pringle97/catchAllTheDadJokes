@@ -39,10 +39,10 @@ document.getElementById('random').addEventListener('click', event => {
 
   } else if (randomNumber === 1) {
     // axios get for other joke
-    axios.get(`https://goquotes-api.herokuapp.com/api/v1/random?count=1`)
+    axios.get(`https://api.quotable.io/random`)
       .then(res => {
         console.log(res)
-        let quote = res.data.quotes[0].text     
+        let quote = res.data.content     
 
         quoteElem.innerHTML = ''
         setupElem.innerHTML = ''
