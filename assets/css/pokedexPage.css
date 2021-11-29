@@ -8,7 +8,7 @@
 }
 
 .nav-wrapper {
-  background-color: #70c0a0;
+  background: linear-gradient(90deg, rgba(255, 27, 27, 1) 15%, rgba(255, 245, 0, 1) 50%, rgba(31, 53, 255, 1) 85%);
   padding: 0 2% 2% 2%;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .pokemonInfo {
-
+  grid-area: pokedex;
   margin: 75px 75px 25px;
 }
 
@@ -766,10 +766,9 @@ input {
   height: 25px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   #pokedex {
     width: 100%;
-    flex-flow: wrap;
   }
 
   #left-panel {
@@ -814,11 +813,24 @@ input {
 
 /* pokedex ends here */
 
+.container2 {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "pokeList"
+    "pokedex"
+    "interact";
+  border: 2px solid black;
+}
+
+#pokeList {
+  grid-area: pokeList;
+}
 
 #interact {
   font-family: 'Press Start 2P', cursive;
   padding: 10px;
-
+  grid-area: interact;
 }
 
 .pictures {
@@ -829,4 +841,13 @@ input {
 
 #list {
   font-family: 'Press Start 2P', cursive;
+}
+
+@media (min-width: 500px) {
+  .container2 {
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+      "pokeList pokedex"
+      "interact interact";
+  }
 }
