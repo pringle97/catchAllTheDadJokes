@@ -59,6 +59,10 @@ caughtPokemonArr.forEach((pokemon, i) => {
     `
   document.getElementById('list').append(listElem)
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> 800132b8af67c460f15f4353b16dc56be8092b00
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
