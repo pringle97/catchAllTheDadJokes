@@ -6,14 +6,26 @@ let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [
 M.AutoInit()
 
 caughtPokemonArr.forEach((pokemon, i) => {
-  let listElem = document.createElement('ul')
+  let listElem = document.createElement('li')
   listElem.className = 'collection-item waves-effect z-depth-1'
   listElem.innerHTML = `
   <a class="btn-flat"><h6>${pokemon}</h6></a>
-  <a class="btn-flat delete right" data-index="${i}"><i class="material-icons">cancel</i></a></a>
   `
-  document.getElementById('pokeList').append(listElem)
+  pokeList.append(listElem)
 })
+  // <a class="btn-flat">
+  // <a a class="btn-flat delete right" data - index="${i}" > <i class="material-icons">cancel</i></a >
+// pokeCollection = document.querySelectorAll('.collection-item');
+
+// pokeCollection.forEach(item => {
+//   item.addEventListener('click', event => {
+//     let valueCheck = event.target.firstChild.textContent
+//     let buttonElem = event.target.id
+//     console.log(buttonElem)
+//     console.log(valueCheck)
+//     console.log(event.target)
+//   })
+// })
 
 document.getElementById('random').addEventListener('click', event => {
   event.preventDefault()

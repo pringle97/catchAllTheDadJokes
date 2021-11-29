@@ -14,6 +14,7 @@ let addDecimal = (num) => {
   return (num / 10).toFixed(1)
 }
 
+
 // the one mcss function to rule them all (conveniently initializes everything so components work)
 M.AutoInit()
 
@@ -68,7 +69,7 @@ document.getElementById('start-button').addEventListener('click', event => {
         let pokemonName = pokemon.name
         console.log(pokemonName)
         let pokeList = document.getElementById('pokeList')
-
+        
         let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
         // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 
@@ -83,8 +84,9 @@ document.getElementById('start-button').addEventListener('click', event => {
 
         localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
 
+        location.reload()
       })
    })
     
-});
+})
 

@@ -56,22 +56,12 @@
   background-color: #98fe00;
 }
 
-
-
-
-
-.contianer2 {
-
-  border: solid black;
-
-}
-
 .pokemonList {
   font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 2px;
   padding: 8px;
   line-height: 16px;
-  margin: auto;
+  /* margin: auto; */
   background: white;
   border: 3px solid white;
   box-shadow: 0 3px 0 3px black,
@@ -80,7 +70,7 @@
     inset 0 0 0 3px black;
   margin-top: 75px;
   height: 560px;
-
+  
   overflow-y: scroll;
 }
 
@@ -90,7 +80,6 @@
 }
 
 .pokemonInteract {
-
   border: solid black;
   margin: 75px;
 }
@@ -766,7 +755,7 @@ input {
   height: 25px;
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   #pokedex {
     width: 100%;
   }
@@ -790,19 +779,13 @@ input {
   * {
     box-sizing: border-box;
   } */
-}
+/* } */
 
 /* @media screen and (max-width: 800px) {
   body {
     width: 100%;
   }
 } */
-
-.container {
-  display: grid;
-  flex-direction: column;
-}
-
 
 .card-action {
   height: 200px;
@@ -813,7 +796,28 @@ input {
 
 /* pokedex ends here */
 
-.container2 {
+
+
+/* #pokeList {
+  grid-area: pokeList;
+} */
+
+#interact {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+}
+
+/* .pictures {
+  height: 111px;
+  width: 171px;
+  border-radius: 5px;
+} */
+
+#list {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* .container2 {
   display: grid;
   gap: 20px;
   grid-template-areas:
@@ -823,31 +827,13 @@ input {
   border: 2px solid black;
 }
 
-#pokeList {
-  grid-area: pokeList;
-}
-
-#interact {
-  font-family: 'Press Start 2P', cursive;
-  padding: 10px;
-  grid-area: interact;
-}
-
-.pictures {
-  height: 111px;
-  width: 171px;
-  border-radius: 5px;
-}
-
-#list {
-  font-family: 'Press Start 2P', cursive;
-}
 
 @media (min-width: 500px) {
   .container2 {
+    display: grid;
     grid-template-columns: 2fr 2fr;
     grid-template-areas:
       "pokeList pokedex"
       "interact interact";
   }
-}
+} */
