@@ -122,7 +122,7 @@ h4 {
 
 .pokemonInteract {
   font-size: 12px;
-  /* font-family: "Pokemon GB", Arial, sans-serif; */
+  font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 2px;
   padding: 8px;
   width: 250px;

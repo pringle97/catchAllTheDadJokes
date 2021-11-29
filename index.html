@@ -23,6 +23,9 @@
         <li><a href="pokedex.html">Pokedéx</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
+      </ul>
     </div>
   </nav>
 
@@ -67,18 +70,24 @@
 
 
 
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Music</a>
 
     <!-- Modal Structure -->
     <div id="modal2" class="modal bottom-sheet">
       <div class="modal-content">
-        <h4>Pokemon Music</h4>
-        <audio controls>
-          <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
-          <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
-        </audio>
-
-      <div class="container row center">
+        
+        <h3>Pokemon Music</h3>
+          
+          <p>Safari Zone</p>
+          <audio controls>
+            <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
+          </audio>
+          <p>Trainer Battle</p>
+          <audio controls> 
+            <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
+          </audio>
+          
+        
+  <!-- <div class="container row">
         <ul id="playlist">
           <li class="current-song">
             <a href="assets/audio/086 Safari Zone.mp3">Safari Zone</a>
@@ -90,7 +99,8 @@
       <div class="modal-footer">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
-    </div>
+    </div> -->
+  </div>
   </div>
 
 <footer class="page-footer">
