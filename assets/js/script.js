@@ -1,10 +1,9 @@
-
 // const pokemonArr = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran", "Nidorina", "Nidoqueen", "Nidoran", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggtor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew"]
 
 let randomNumber = (Math.floor(Math.random()))
 
 //generating number between 1 and 100 
-let x = Math.floor((Math.random() * 100) +1)
+let x = Math.floor((Math.random() * 100) + 1)
 let ball = document.getElementById('ball')
 let berry = document.getElementById('berry')
 let goNear = document.getElementById('go-near')
@@ -108,9 +107,9 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(pokemon)
         let pokemonName = pokemon.name
         console.log(pokemonName)
-        
 
-        
+
+
 
         console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
         // check caughtPokemonArr value in console
@@ -142,7 +141,7 @@ document.getElementById('start-button').addEventListener('click', event => {
         //   }
         // })
 
-        
+
 
         // if (catchPokemon == 0) {
         //   for (let i = 0; i < caughtPokemonArr.length; i++) {
@@ -153,13 +152,13 @@ document.getElementById('start-button').addEventListener('click', event => {
         //   }
         //   alert("you've caught a pokemon!")
 
-      
+
 
         // console.log(`Name: ${userName}`)
         // addToLocalStorage(userName.value)
         // userName.value = ''
       })
-    
+
   })
 })
 
@@ -167,14 +166,12 @@ document.getElementById('start-button').addEventListener('click', event => {
 // function addToLocalStorage(alreadyCaughtPokemon, newlyCaughtPokemon) {
 
 //   event.preventDefault
-  
+
 //   // add new poke to array
 //   caughtPokemon.push(pokedexObj)
 
 //   // stringify the <array></array>
 //   var caughtPokemonToString = JSON.stringify(caughtPokemon)
-  
+
 //   localStorage.setItem('caughtPokemonArr', caughtPokemonToString)
 // }
-
-
