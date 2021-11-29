@@ -66,8 +66,8 @@
 
 }
 
-/* .pokemonList {
-  b font-family: "Pokemon GB", Arial, sans-serif;
+.pokemonList {
+  font-family: "Pokemon GB", Arial, sans-serif;
   border-radius: 2px;
   padding: 8px;
   line-height: 16px;
@@ -82,17 +82,17 @@
   height: 560px;
 
   overflow-y: scroll;
-} */
+}
 
 .pokemonInfo {
 
-  margin: 75px 75px 25px
+  margin: 75px 75px 25px;
 }
 
 .pokemonInteract {
 
   border: solid black;
-  margin: 75px
+  margin: 75px;
 }
 
 .page-footer {
@@ -102,6 +102,10 @@
 }
 
 h4 {
+  text-align: center;
+}
+
+.name {
   text-align: center;
 }
 
@@ -126,14 +130,14 @@ h4 {
   line-height: 16px;
   margin: auto;
   background: white;
-  border: 2px solid white;
-  box-shadow: 0 2px 0 2px black,
-    inset 0 2px 0 2px black,
-    0 0 0 2px black,
-    inset 0 0 0 2px black;
+  border: 1.5px solid white;
+  box-shadow: 0 1.5px 0 1.5px black,
+    inset 0 1.5px 0 1.5px black,
+    0 0 0 1.5px black,
+    inset 0 0 0 1.5px black;
 }
 
-.pokemonInteract>i {
+/* .pokemonInteract>i {
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -151,7 +155,7 @@ h4 {
   to {
     margin-top: 23px;
   }
-}
+} */
 
 /* text dialogue box ends here */
 
@@ -400,7 +404,7 @@ input {
   background-color: var(--main-screen-bg-color);
   border: solid black 2px;
   border-radius: 5%;
-  background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png);
+  /* background-image: url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -459,8 +463,8 @@ input {
 }
 
 .green-screen {
-  width: 80px;
-  height: 30px;
+  width: 90px;
+  height: 40px;
   border-radius: 5px;
   border: solid black 2px;
   background-color: #3ab47d;
@@ -758,7 +762,7 @@ input {
 }
 
 .bottom-screens-container .right-panel-screen {
-  width: 64px;
+  width: 95px;
   height: 25px;
 }
 
@@ -776,7 +780,7 @@ input {
     width: 100%;
   }
 
-  h2 {
+  /* h2 {
     font-size: 24px;
   }
 
@@ -786,17 +790,17 @@ input {
 
   * {
     box-sizing: border-box;
-  }
+  } */
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   body {
     width: 100%;
   }
-}
+} */
 
 .container {
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 
@@ -809,3 +813,20 @@ input {
 }
 
 /* pokedex ends here */
+
+
+#interact {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+
+}
+
+.pictures {
+  height: 111px;
+  width: 171px;
+  border-radius: 5px;
+}
+
+#list {
+  font-family: 'Press Start 2P', cursive;
+}
