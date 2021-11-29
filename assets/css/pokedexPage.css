@@ -851,3 +851,9 @@ input {
       "interact interact";
   }
 }
+
+.sprites {
+    height: 111px;
+    width: 171px;
+    border-radius: 5px;
+}
