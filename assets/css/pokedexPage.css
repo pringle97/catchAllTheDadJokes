@@ -830,3 +830,8 @@ input {
 #list {
   font-family: 'Press Start 2P', cursive;
 }
+
+#random {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #9e9d9d;
+}
