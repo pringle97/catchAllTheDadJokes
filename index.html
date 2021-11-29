@@ -54,24 +54,21 @@
           <!-- <img src="https://www.kindpng.com/picc/m/472-4723141_shuckle-pokemon-hd-png-download.png"
               style="max-width:100%;height:auto;"> -->
         </div>
-      </div>
-    </div>
-    <div class="col s12 l4 center container startbtn-container">
-      <a id="start-button" class="btn center waves-effect waves-orange teal"><i class="material-icons right">directions_run</i>Explore</a>
-    </div>
-  </div>  
-    
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <span class="card-title"></span>
+        <section class="col s12">
+          <h1></h1>
+        </section>
+        <div class="col s12 actionbtns-container">
+          <a id="ball" class="btn waves-effect waves-light container">throw a ball</a>
+          <a class="btn waves-effect waves-light container">throw a berry</a>
+          <a class="btn waves-effect waves-light container">go near</a>
+          <a class="btn waves-effect waves-light container">run away</a>
         </div>
       </div>
     </div>
   </div>
   <div class="col s12 l4 center container startbtn-container">
-    <a id="start-button" class="btn center waves-effect waves-orange teal tooltipped" data-position="bottom"
-      data-tooltip="*insert epic adventure music*"><i class="material-icons right">directions_run</i>Explore</a>
+    <a id="start-button" class="btn center waves-effect waves-orange teal"><i
+        class="material-icons right">directions_run</i>Explore</a>
   </div>
 </div>
 
@@ -86,14 +83,11 @@
 
 
 <div id="container">
-  <!--Modal Trigger [Pokedex]-->
+  <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Pokedex</a>
 
-  <!-- Modal Trigger [Music]-->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Music</a> -->
-
-  <!--Modal Structure [Pokedex]-->
-  <div id="modal1" class="modal bottom-sheet">
+  <!--Pokedex Modal Structure-->
+  <div id="modal1" class="modal">
     <div class="modal-content center">
       <h4>Pokedex</h4>
       <div id="pokedex">
@@ -250,74 +244,91 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
+      <!-- Modal Structure -->
+      <div id="modal3" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
 
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Music</a>
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Music</a>
 
-  <!--Modal Structure [Music]-->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Pokemon Music</h4>
-      <audio controls>
-        <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
-        <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
-      </audio>
-    </div>
-  </div>
-</div>
-<div class="container row">
-  <div id="quoteContainer" class="container col center">
-    <p id="setup"></p>
-    <p id="joke"></p>
-    <p id="quote"></p>
-    <button id="random" class="btn-large">Interact</button>
-  </div>
-</div>
-</div>
+      <!-- Modal Structure -->
+      <div id="modal2" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Pokemon Music</h4>
+          <audio controls>
+            <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
+            <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
+          </audio>
 
-<footer class="page-footer">
-  <div class="container">
+          <div class="container row">
+            <div id="quoteContainer" class="container col center">
+              <p id="setup"></p>
+              <p id="joke"></p>
+              <p id="quote"></p>
+              <button id="random" class="btn-large">Interact</button>
+              <ul id="playlist">
+                <li class="current-song">
+                  <a href="assets/audio/086 Safari Zone.mp3">Safari Zone</a>
+                </li>
+                <li>
+                  <a href="assets/audio/10 Battle! (Trainer Battle).mp3">Battle</a>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+        </div>
 
-    <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
-    <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
-  </div>
+        <footer class="page-footer">
+          <div class="container">
 
-</footer>
+            <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
+            <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+          </div>
 
-  <script>
-    function audioPlayer(){
-      var currentSong = 0
-      $("#audioPlayer")[0].src = $("playlist li a")[0]
-      $("#audioPlayer")[0].play()
-      $("playlist li a").click(function(e){
-        e.preventDefault()
-        $("audioPlayer")[0].src = this
-        $("audioPlayer")[0].play()
-        $("playlist li").removeClass("current-song")
-        currentSong = $(this).parent().index()
-        $(this).parent().addClass("current-song")
-      })
-      
-      $("#audioPlayer")[0].addEventListener("ended", function(){
-        currentSong++
-        if(currentSong == $("playlist li a").length)
-        currentSong = 0
-        $("#playlist li").removeClass("current-song")
-        $("playlist li:eq("+currentSong+")").addClass("current-song")
-        $("audioPlayer")[0].src = $("#playlist li a") [currentSong].href
-        $("#audioPlayer")[0].play()
-      })
-      
-    audioPlayer()
-  }
-  </script>
-  
-  <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/js/jokeScript.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
+        </footer>
+
+        <script>
+          function audioPlayer() {
+            var currentSong = 0
+            $("#audioPlayer")[0].src = $("playlist li a")[0]
+            $("#audioPlayer")[0].play()
+            $("playlist li a").click(function (e) {
+              e.preventDefault()
+              $("audioPlayer")[0].src = this
+              $("audioPlayer")[0].play()
+              $("playlist li").removeClass("current-song")
+              currentSong = $(this).parent().index()
+              $(this).parent().addClass("current-song")
+            })
+
+            $("#audioPlayer")[0].addEventListener("ended", function () {
+              currentSong++
+              if (currentSong == $("playlist li a").length)
+                currentSong = 0
+              $("#playlist li").removeClass("current-song")
+              $("playlist li:eq(" + currentSong + ")").addClass("current-song")
+              $("audioPlayer")[0].src = $("#playlist li a")[currentSong].href
+              $("#audioPlayer")[0].play()
+            })
+
+            audioPlayer()
+          }
+        </script>
+
+        <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="assets/js/jokeScript.js"></script>
+        <script src="assets/js/script.js"></script>
+        </body>
 
 </html>
