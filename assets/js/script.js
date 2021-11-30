@@ -112,7 +112,7 @@ document.getElementById('start-button').addEventListener('click', event => {
           document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
           let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
           let i = 0
-          let speed = 100
+          let speed = 50
           let words = `${pokemonStatus}`
           console.log(pokemonStatus)
           document.getElementById(`caughtStatus`).innerHTML = ``
@@ -131,7 +131,7 @@ document.getElementById('start-button').addEventListener('click', event => {
           document.getElementById(`caughtStatus`).innerHTML = `The Pokemon fled!`
           let pokemonFled = document.getElementById(`caughtStatus`).innerHTML
           let i = 0
-          let speed = 100
+          let speed = 50
           let words = `${pokemonFled}`
           console.log(pokemonFled)
           document.getElementById(`caughtStatus`).innerHTML = ``
