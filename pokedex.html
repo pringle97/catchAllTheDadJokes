@@ -23,6 +23,10 @@
       <li><a href="pokedex.html">Pokedéx</a></li>
       <li><a href="about.html">About Us</a></li>
       </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i
+              class="tiny material-icons">music_note</i></a></li>
+      </ul>
     </div>
   </nav>
 
@@ -33,12 +37,11 @@
   </ul>
 
 
-
   <div class="container2">
 
     <div class="row">
       
-      <div id="list" class="col s12 m12 l3 offset-l1 pokemonList">
+      <div id="pokeList" class="col s12 m12 l3 offset-l1 pokemonList">
       <ul class="collection with-header">
         <li class="collection-header">
           <h4>Pokémon</h4>
@@ -222,8 +225,25 @@
         </div>
     </div>
 
-
   </div>
+
+  <!-- modal for music -->
+  <div id="modal2" class="modal bottom-sheet">
+    <div class="modal-content">
+  
+      <h3>Pokemon Music</h3>
+  
+      <p>Pokemon Center</p>
+      <audio controls>
+        <source src="assets/audio/pokemonCenter.mp3" type="audio/mp3">
+      </audio>
+  
+      
+      </div>
+      </div>
+
+
+
 
 
 

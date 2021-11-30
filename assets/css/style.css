@@ -8,12 +8,8 @@
 }
 
 .nav-wrapper {
-  background-color: #70c0a0;
+  background: #70c0a0;
   padding: 0 2% 2% 2%;
-}
-
-.button-action {
-  background-color: #70c0a0;
 }
 
 .modal {
@@ -58,59 +54,48 @@
   padding-bottom: 10px;
 }
 
-
 .title {
+  grid-area: title;
   margin: 10px 0 10px 0;
-  border: 2px solid red;
-}
+  /* border: 2px solid red; */
 
-.row1 {
-  display: grid;
-  padding: 10px 0 10px 0;
-  border: 2px solid blue;
-}
 
-.column1 {
-  height: 450px;
-  border: 2px solid purple;
-}
-
-.card1 {
-  border: 2px solid green;
-}
-
-#pokemonImg {
-  border: 2px solid orange;
 }
 
 #pokemonCard {
-  padding: 5px 0 5px 0;
-}
-
-#pokemon {
-  padding: 1% 0 0 1%;
+  padding:10px;
+  border: 1.5px solid white;
+  box-shadow: 0 1.5px 0 1.5px black,
+    inset 0 1.5px 0 1.5px black,
+    0 0 0 1.5px black,
+    inset 0 0 0 1.5px black;
 }
 
 #cardContent {
-  margin: 5px 0 10px 0;
+  /* grid-area: pokeStats; */
+  margin: 25px 0 25px 0;
   padding-bottom: 10px;
-  border: 2px solid brown;
+  /* border: 2px solid brown; */
+  border: 1.5px solid white;
+  box-shadow: 0 1.5px 0 1.5px black,
+    inset 0 1.5px 0 1.5px black,
+    0 0 0 1.5px black,
+    inset 0 0 0 1.5px black;
 }
+
+
+
+.hide {
+  display: none;
+}
+
+
+/* #cardContent {
+  margin-top: 100px;
+} */
 
 .actionbtns-container {
-  display: grid;
-  grid: 1fr 1fr / 1fr 1fr;
-  gap: 30px 10px;
-  border: 2px solid rosybrown;
-}
-
-.startbtn-container {
-  border: 2px solid hotpink;
-}
-
-.column2 {
-  height: 450px;
-  border: 2px solid chocolate;
+  padding-bottom: 50px;
 }
 
 /* h2 {
@@ -118,9 +103,9 @@
 } */
 
 
+
 h3 {
   text-align: center;
   background-color: #70c0a0;
   color: white;
 }
-

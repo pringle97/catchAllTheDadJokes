@@ -769,15 +769,7 @@ input {
 @media only screen and (max-width: 600px) {
   #pokedex {
     width: 100%;
-    flex-flow: wrap;
-  }
-
-  #left-panel {
-    width: 100%;
-  }
-
-  #right-panel {
-    width: 100%;
+    flex-flow: in;
   }
 
   h2 {
