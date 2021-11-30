@@ -1,5 +1,5 @@
 .nav-wrapper {
-  background: linear-gradient(90deg, #ff1654 40%, #247ba0 60%);
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .page-footer {
-  background-color: #70c0a0;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   text-align: center;
   padding-bottom: 10px;
 }
