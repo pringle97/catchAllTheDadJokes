@@ -1,3 +1,7 @@
+M.AutoInit()
+let audio = document.getElementById(`audio`);
+audio.volume = 0.2;
+
 const interactElem = document.getElementById(`interact`)
 const nameElem=document.getElementById(`name-screen`)
 const aboutElem = document.getElementById(`about-screen`)
@@ -127,5 +131,4 @@ document.getElementById(`peter`).addEventListener(`click`, () => {
 
 
 })
-
 

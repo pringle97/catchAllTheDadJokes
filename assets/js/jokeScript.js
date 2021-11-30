@@ -1,3 +1,6 @@
+let audio = document.getElementById(`audio`);
+audio.volume = 0.2;
+
 let pokeList = document.getElementById('pokeList')
 let addDecimal = (num) => { return (num / 10).toFixed(1) }
 let capitalize = (string) => {

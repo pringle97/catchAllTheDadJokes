@@ -57,6 +57,7 @@
 }
 
 body {
+  font-family: 'Press Start 2P', cursive;
   background-color: #fbeeda;
 }
 
@@ -826,4 +827,10 @@ input {
 
 #list {
   font-family: 'Press Start 2P', cursive;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+  color: white;
 }

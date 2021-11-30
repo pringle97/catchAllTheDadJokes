@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <div>
@@ -24,7 +25,7 @@
         <li><a href="about.html">About Us</a></li>
       </ul>
       <ul class="left hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
+        <li><a class="waves-effect waves-light btn modal-trigger blue darken-4 pulse" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
       </ul>
     </div>
   </nav>
@@ -35,62 +36,111 @@
     <li><a href="about.html">About Us</a></li>
   </ul>
 
-  <div class="gridWrapper">
-    <div class="title center">
-      <h1>Welcome to the Safari Zone!</h1>
+  <div class="container">
+
+<div class="row">
+
+  <div class="col s12 title center">
+    <h4>Welcome to the Safari Zone!</h4>
+  </div>
+</div>
+  
     </div>
-    <!-- <div class="main-content"> -->
-    <!-- <div class="column1"> -->
-    <div class="center container startbtn-container">
-      <a id="start-button" class="btn center waves-effect waves-light blue darken-4"><i
-          class="material-icons right">directions_run</i>Explore</a>
-    </div>
+
+
+
+
+ 
+
 
 
 <div class="container">
   <div class="row">
 <!-- <div id="pokeList" class="col s12 m12 l3 offset-l1 pokemonList"></div> -->
     
-    <div id="pokemonCard" class="col s12 m12 l5 card card1">
-      <div id="pokemonImg" class="card-image">
-        <img src="assets/images/slobro.png">
-      </div>
-      <!-- <div id="cardContent" class="card-content flow-text"></div> -->
+<div id="pokemonImg" class="col s12 m12 l5" >
+  <img id="cardBackground" src="assets/images/pokemonBackground.png">
+  
+
     </div>
     <!-- </div> -->
     <!-- <div class="column2"> -->
       <div id="cardContent" class="col s12 m12 l5 push-l2 card-content center">
-        <h2><strong>Slowbro</strong></h2>
-        <h5>Type: Water, Psychic</h5>
-        <h5>Height: 16 m</h5>
-        <h5>Weight: 785 kg</h5>
+        <h5>How to Play</h5>
+        <h6>Click on the explore button to find a pokemon.</h6>
+        <h6>When you find a pokemon you want, throw a ball.</h6>
+        <br>
+
+
+
       </div>
     </div>
     
   </div>
 
-<a class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal2"><i
-    class="tiny material-icons">music_note</i></a>
-
-  <div class=" center container actionbtns-container">
-    <a id="ball" class="waves-effect waves-light btn modal-trigger blue darken-4" href="#modal3">throw a ball</a>
-    <a class="btn waves-effect waves-light blue darken-4">throw a berry</a>
-    <a class="btn waves-effect waves-light blue darken-4">go near</a>
-    <a class="btn waves-effect waves-light blue darken-4">run away</a>
-  </div>
-  
-</div>
-
   <!-- Modal Structure for throw a ball -->
-  <div id="modal3" class="modal">
-    <div id="caughtStatus" class="modal-content">
+ 
+  
+  
+      <div id="modal3" class="modal">
+        <div id="caughtStatus" class="modal-content">
+  
+          <p>Please explore for a pokemon</p>
+        </div>
+      </div>
+  
+ 
+
+
+
+
+
+<div id="btnContainer" class="container">
+<div class="row">
+  
+  <div class="col s12 m12 l3 push-l1 btnBtn ">
+
+    <div class="center">
+      <br>
+      <a id="start-button" class="btn-small center waves-effect waves-light blue darken-4"><i
+        class="material-icons right">directions_run</i>Explore</a>
+        <br>
+      </div>
       
-      <p>A bunch of text</p>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+
+    <div class="col s12 m12 l3 push-l5 btnBtn">
+
+      <div class="center ">
+        <br>
+        <a id="ball" class="btn-small waves-effect waves-light modal-trigger blue darken-4"  href="#modal3">throw a ball</a> 
+        <br>
+        <!-- <a class="btn waves-effect waves-light blue darken-4">throw a berry</a>
+          <a class="btn waves-effect waves-light blue darken-4">go near</a>
+          <a class="btn waves-effect waves-light blue darken-4">run away</a> -->
+        </div>
+      </div>
+        
     </div>
-  </div>
+      
+    </div>
+
+
+
+  <!-- Modal Structure for throw a ball
+ <div class="container">
+   <div class="row">
+
+     
+     <div id="modal3" class=" col s4 m4 l4 push-l4 modal">
+       <div id="caughtStatus" class="modal-content">
+         
+         <p>Please explore for a pokemon</p>
+        </div>
+      </div>
+      
+    </div>
+  </div> -->
 
 
 
@@ -99,16 +149,20 @@
       <div class="modal-content">
         
         <h3>Pokemon Music</h3>
-          
+        
+        <p>Title Song</p>
+        <audio id="audio" controls> 
+          <source src="assets/audio/03_Title_Screen.mp3" type="audio/mp3">
+        </audio>
           <p>Safari Zone</p>
-          <audio controls>
+          <audio id="audio1" controls>
             <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
           </audio>
           <p>Trainer Battle</p>
-          <audio controls> 
+          <audio id="audio2" controls> 
             <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
           </audio>
-          
+            
         
   <!-- <div class="container row">
         <ul id="playlist">
@@ -128,8 +182,8 @@
 
 <footer class="page-footer">
   <div class="container">
-
-    <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
+    <p class="white-text">© 2021 Copyright by</p><br>
+    <p>Alan, Kevin, Malia, Nathan and Peter</p>
     <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
   </div>
 

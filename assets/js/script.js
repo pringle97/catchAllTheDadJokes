@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 let randomNumber = (Math.floor(Math.random()))
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -38,10 +45,14 @@ document.getElementById('start-button').addEventListener('click', event => {
         <img src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         document.getElementById('cardContent').innerHTML = `
-        <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
-        <h5>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h5>
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <h5>${capitalize(pokemon.species.name)}</h5>
+        <br>
+        <h6>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h6>
+        <br>
+        <h6>Height: ${addDecimal(pokemon.height)} m</h6>
+        <br>
+        <h6>Weight: ${addDecimal(pokemon.weight)} kg</h6>
+        <br>
         `
       } else {
         console.log(pokemon.types[0].type.name)
@@ -50,10 +61,14 @@ document.getElementById('start-button').addEventListener('click', event => {
         <img src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         document.getElementById('cardContent').innerHTML = `
-        <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
-        <h5>Type: ${capitalize(pokemon.types[0].type.name)}</h5>
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <h5>${capitalize(pokemon.species.name)}</h5>
+        <br>
+        <h6>Type: ${capitalize(pokemon.types[0].type.name)}</h6>
+        <br>
+        <h6>Height: ${addDecimal(pokemon.height)} m</h6>
+        <br>
+        <h6>Weight: ${addDecimal(pokemon.weight)} kg</h6>
+        <br>
         `
       }
     })
@@ -74,6 +89,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       let pokemonName = pokemon.name
       console.log(pokemonName)
       let pokeList = document.getElementById('pokeList')
+  
       
       
       let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
@@ -88,13 +104,50 @@ document.getElementById('start-button').addEventListener('click', event => {
         
         // location.reload()
         if (catchPokemon == 1) {
+          
           // alert("you've caught a pokemon!")
           caughtPokemonArr.push(pokemonName)
           localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
           console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
-          document.getElementById(`caughtStatus`).innerHTML = `You've caught ${pokemon.species.name}`
+          document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
+          // let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
+          // let i =0
+          // let speed = 10;
+          // let words = `${pokemonStatus}`
+          // console.log(pokemonStatus)
+          // pokemonStatus = ``
+
+          // function typeWriter() {
+          //   if (i < words.length) {
+          //     document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+          //     i++;
+          //     setTimeout(typeWriter, speed);
+          //   }
+          // }
+          // typeWriter()
+
+
         } else {
-          document.getElementById(`caughtStatus`).innerHTML = `The Pokemon fled`
+          document.getElementById(`caughtStatus`).innerHTML = `The Pokemon fled!`
+          
+          
+        
         }
       })
   })
+
+
+// caughtStatus.innerHTML = ``
+
+
+
+
+
+
+
+  let audio = document.getElementById(`audio`);
+  audio.volume = 0.2;
+  let audio1 = document.getElementById(`audio1`);
+  audio1.volume = 0.2;
+  let audio2 = document.getElementById(`audio2`);
+  audio2.volume = 0.2;
