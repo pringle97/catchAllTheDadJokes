@@ -1,6 +1,24 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+}
+
 .nav-wrapper {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
+}
+
+.title {
+  display: flexbox;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .modal {
@@ -53,62 +71,54 @@
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  margin-bottom: 50px;
-  /* gap: 20px;
-  grid-template-areas:
-    "title"
-    "startBtn"
-    "pokeImg"
-    "pokeStats"
-    "actionBtns"; */
+  padding-bottom: 50px;
+  background-image: url('../images/59.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#cardContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin-left: 25px !important;
+  border-radius: 2px;
+  padding: 0 10px 0 10px;
+  line-height: 16px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 #pokemonCard {
-  margin-top: 20px;
-  padding: 5px 0 5px 0;
-}
-
-#pokemon {
-  padding: 1% 0 0 1%;
+  display: flex;
+  border-radius: 2px;
+  background: white;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 3px black,
+    inset 0 3px 0 3px black,
+    0 0 0 3px black,
+    inset 0 0 0 3px black;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .actionbtns-container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100px;
   margin-top: 25px;
+  /* margin-bottom: 25px; */
 }
-
-.startbtn-container {
-  grid-area: startBtn;
-}
-
-/* .column2 {
-  border: 2px solid chocolate;
-} */
-
-@media (min-width: 500px) {
-  /* .gridWrapper {
-    grid-template-columns: 2fr 2fr;
-    grid-template-areas:
-      "title      title"
-      "startBtn   startBtn"
-      "pokeImg    pokeStats"
-      "actionBtns actionBtns";
-  } */
-}
-
-/* bottom screens */
-
-/* .bottom-screens-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.bottom-screens-container .right-panel-screen {
-  width: 64px;
-  height: 25px;
-} */
 
 /* @media only screen and (max-width: 600px) {
   #pokedex {
@@ -141,25 +151,7 @@
   body {
     width: 100%;
   }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card-action {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-/* h2 {
-  font-weight: bold;
 } */
-
 
 h3 {
   text-align: center;
