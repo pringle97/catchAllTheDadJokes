@@ -7,6 +7,10 @@
   --square-buttons-color: #7ca9f7;
 }
 
+body {
+  font-family: 'Press Start 2P', cursive;
+}
+
 .nav-wrapper {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
