@@ -8,7 +8,7 @@
 }
 
 .nav-wrapper {
-  background: #70c0a0;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
 }
 
@@ -49,9 +49,10 @@
 }
 
 .page-footer {
-  background-color: #70c0a0;
-  text-align: center;
-  padding-bottom: 10px;
+    background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+    text-align: center;
+    padding-bottom: 10px;
+  
 }
 
 .title {
@@ -63,7 +64,7 @@
 }
 
 #pokemonCard {
-  padding:10px;
+  padding: 10px;
   border: 1.5px solid white;
   box-shadow: 0 1.5px 0 1.5px black,
     inset 0 1.5px 0 1.5px black,
