@@ -42,7 +42,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       if (pokemon.types[1]) {
         document.getElementById('cardContent').classList.remove('hide')
         document.getElementById('pokemonImg').innerHTML = `
-        <img src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
+        <img  src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         document.getElementById('cardContent').innerHTML = `
         <h5>${capitalize(pokemon.species.name)}</h5>
@@ -98,7 +98,7 @@ document.getElementById('start-button').addEventListener('click', event => {
         console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
         // check caughtPokemonArr value in console
 
-        let catchPokemon = Math.floor(Math.random() * 2)
+        let catchPokemon = Math.floor(Math.random() * 3)
         console.log(catchPokemon)
 
         
@@ -110,25 +110,40 @@ document.getElementById('start-button').addEventListener('click', event => {
           localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
           console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
           document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
-          // let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
-          // let i =0
-          // let speed = 10;
-          // let words = `${pokemonStatus}`
-          // console.log(pokemonStatus)
-          // pokemonStatus = ``
+          let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
+          let i = 0
+          let speed = 100
+          let words = `${pokemonStatus}`
+          console.log(pokemonStatus)
+          document.getElementById(`caughtStatus`).innerHTML = ``
 
-          // function typeWriter() {
-          //   if (i < words.length) {
-          //     document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
-          //     i++;
-          //     setTimeout(typeWriter, speed);
-          //   }
-          // }
-          // typeWriter()
+          function typeWriter() {
+            if (i < words.length) {
+              document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+          typeWriter()
 
 
         } else {
           document.getElementById(`caughtStatus`).innerHTML = `The Pokemon fled!`
+          let pokemonFled = document.getElementById(`caughtStatus`).innerHTML
+          let i = 0
+          let speed = 100
+          let words = `${pokemonFled}`
+          console.log(pokemonFled)
+          document.getElementById(`caughtStatus`).innerHTML = ``
+
+          function typeWriter2() {
+            if (i < words.length) {
+              document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+              i++;
+              setTimeout(typeWriter2, speed);
+            }
+          }
+          typeWriter2()
           
           
         
