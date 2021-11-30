@@ -8,7 +8,7 @@ body {
 }
 
 .title {
-  display: flexbox;
+  display: flex;
   border-radius: 2px;
   background: white;
   border: 3px solid white;
