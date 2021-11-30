@@ -1,10 +1,14 @@
 .nav-wrapper {
-  background: linear-gradient(90deg, rgba(255, 27, 27, 1) 15%, rgba(255, 245, 0, 1) 50%, rgba(31, 53, 255, 1) 85%);
+  background: linear-gradient(90deg, #ff1654 40%, #247ba0 60%);
   padding: 0 2% 2% 2%;
 }
 
 .modal {
   width: 70%;
+}
+
+.music {
+  background: #0077b6;
 }
 
 .red {
@@ -159,8 +163,9 @@
 
 h3 {
   text-align: center;
-  background-color: #70c0a0;
+  background-color: #03045e;
   color: white;
+  padding: 10px 0 10px 0;
 }
 
 .hide {

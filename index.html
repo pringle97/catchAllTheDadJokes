@@ -24,7 +24,7 @@
         <li><a href="about.html">About Us</a></li>
       </ul>
       <ul class="left hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
+        <li><a class="waves-effect waves-yellow btn modal-trigger music pulse" href="#modal2"><i class="tiny material-icons">music_note</i></a></li>
       </ul>
     </div>
   </nav>
@@ -36,34 +36,35 @@
   </ul>
 
   <div class="container gridWrapper">
+
     <div class="title center">
       <h1>Welcome to the Safari Zone!</h1>
     </div>
-    <!-- <div class="main-content"> -->
-    <!-- <div class="column1"> -->
+
     <div class="center container startbtn-container">
       <a id="start-button" class="btn waves-effect blue darken-4"><i class="material-icons right">directions_run</i>Explore</a>
     </div>
+
     <div id="pokemonCard" class="container center">
       <div id="pokemonImg" class="card">
         <img src="assets/images/59.png" width="800">
       </div>
-        <!-- <div id="cardContent" class="card-content flow-text"></div> -->
     </div>
-    <!-- </div> -->
-    <!-- <div class="column2"> -->
+
     <div id="cardContent" class="card-content center hide">
       <h2><strong>Slowbro</strong></h2>
       <h5>Type: Water, Psychic</h5>
       <h5>Height: 16 m</h5>
       <h5>Weight: 785 kg</h5>
     </div>
+
     <div class="container actionbtns-container center">
       <a id="ball" class="btn waves-effect waves-light blue darken-4">throw a ball</a>
       <a class="btn waves-effect waves-light blue darken-4">throw a berry</a>
       <a class="btn waves-effect waves-light blue darken-4">go near</a>
       <a class="btn waves-effect waves-light blue darken-4">run away</a>
     </div>
+
   </div> 
 
  
@@ -72,44 +73,30 @@
 
 
     <!-- Modal Structure -->
-    <div id="modal2" class="modal bottom-sheet">
-      <div class="modal-content">
+  <div id="modal2" class="modal bottom-sheet">
+    <div class="modal-content container center">
+      
+      <h3>Pokemon Music</h3>
         
-        <h3>Pokemon Music</h3>
-          
-          <p>Safari Zone</p>
-          <audio controls>
-            <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
-          </audio>
-          <p>Trainer Battle</p>
-          <audio controls> 
-            <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
-          </audio>
-          
+        <p>Safari Zone</p>
+        <audio controls>
+          <source src="assets/audio/086 Safari Zone.mp3" type="audio/mp3">
+        </audio>
+        <p>Trainer Battle</p>
+        <audio controls> 
+          <source src="assets/audio/10 Battle! (Trainer Battle).mp3" type="audio/mp3">
+        </audio>
         
-  <!-- <div class="container row">
-        <ul id="playlist">
-          <li class="current-song">
-            <a href="assets/audio/086 Safari Zone.mp3">Safari Zone</a>
-          </li>
-          <li>
-            <a href="assets/audio/10 Battle! (Trainer Battle).mp3">Battle</a>
-          </li>  
-        </ul>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-      </div>
-    </div> -->
-  </div>
+    </div>
   </div>
 
-<footer class="page-footer">
-  <div class="container">
-    <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
-    <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
-  </div>
+  <footer class="page-footer">
+    <div class="container">
+      <h6 class="white-text">© 2021 Copyright by Alan, Kevin, Malia, Nathan and Peter</h6>
+      <!-- <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p> -->
+    </div>
 
-</footer>
+  </footer>
 
   <script>
     function audioPlayer(){
