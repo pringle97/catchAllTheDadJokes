@@ -1,14 +1,53 @@
-:root {
-  --main-bg-color: #fe0065;
-  --secondary-bg-color: #f2f2f2;
-  --main-screen-bg-color: #98cb98;
-  --secondary-screen-bg-color: #9e9d9d;
-  --main-buttons-color: #585858;
-  --square-buttons-color: #7ca9f7;
-}
 
+<<<<<<< HEAD
 body {
   font-family: 'Press Start 2P', cursive;
+=======
+<<<<<<< HEAD
+.nav-wrapper {
+  background-color: #70c0a0;
+  padding: 0 2% 2% 2%;
+}
+
+.button-action {
+  background-color: #70c0a0;
+}
+
+.modal {
+  width: 70%;
+}
+
+.modal-trigger {
+  background-color: #70c0a0;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.yellow {
+  background-color: #fecb65;
+}
+
+.green {
+  background-color: #32cb65;
+}
+
+.blue {
+  background-color: #3298cb;
+}
+
+.light-blue {
+  background-color: #85bdfe;
+}
+
+.light-red {
+  background-color: #fe98cb;
+}
+
+.light-yellow {
+  background-color: #fefecb;
+>>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
 }
 
 .nav-wrapper {
@@ -583,3 +622,5 @@ body {
 #list {
   font-family: 'Press Start 2P', cursive;
 }
+=======
+>>>>>>> 564aaaba268f1f19ae3a85814d330c4a652cf008

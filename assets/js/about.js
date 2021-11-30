@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const interactElem = document.getElementById(`interact`)
 const nameElem=document.getElementById(`name-screen`)
 const aboutElem = document.getElementById(`about-screen`)
@@ -128,4 +129,6 @@ document.getElementById(`peter`).addEventListener(`click`, () => {
 
 })
 
+=======
+>>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
 

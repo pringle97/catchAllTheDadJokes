@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let randomNumber = (Math.floor(Math.random()))
 let capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
@@ -89,4 +90,6 @@ document.getElementById('start-button').addEventListener('click', event => {
    })
     
 })
+=======
+>>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
 

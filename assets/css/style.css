@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 body {
   font-family: 'Press Start 2P', cursive;
+=======
+<<<<<<< HEAD
+:root {
+  --main-bg-color: #fe0065;
+  --secondary-bg-color: #f2f2f2;
+  --main-screen-bg-color: #98cb98;
+  --secondary-screen-bg-color: #9e9d9d;
+  --main-buttons-color: #585858;
+  --square-buttons-color: #7ca9f7;
+>>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
 }
 
 .nav-wrapper {
@@ -163,6 +174,8 @@ h3 {
   color: white;
   padding: 10px 0 10px 0;
 }
+=======
+>>>>>>> 564aaaba268f1f19ae3a85814d330c4a652cf008
 
 .hide {
   display: none;
