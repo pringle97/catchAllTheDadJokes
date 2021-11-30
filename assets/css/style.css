@@ -21,6 +21,10 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
+#ball {
+  width: 100%;
+}
+
 .modal {
   width: 70%;
 }

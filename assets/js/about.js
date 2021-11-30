@@ -4,7 +4,7 @@ const aboutElem = document.getElementById(`about-screen`)
 const typeElem = document.getElementById(`type-screen`)
 const idElem = document.getElementById(`id-screen`)
 
-
+M.AutoInit()
 
 document.getElementById(`alan`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Alan Truong`
