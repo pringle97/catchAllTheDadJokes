@@ -10,6 +10,9 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
+let pokemonNum 
+
+
 let addDecimal = (num) => {
   return (num / 10).toFixed(1)
 }
@@ -19,7 +22,7 @@ M.AutoInit()
 
 document.getElementById('start-button').addEventListener('click', event => {
   event.preventDefault()
-  let pokemonNum = (Math.floor(Math.random() * 151) + 1)
+  pokemonNum = (Math.floor(Math.random() * 151) + 1)
   console.log(pokemonNum)
   document.getElementById('pokemonImg').innerHTML = ''
 
@@ -54,37 +57,44 @@ document.getElementById('start-button').addEventListener('click', event => {
         `
       }
     })
-  // .catch (err => console.log(err))
+    // .catch (err => console.log(err))
+    
+  });
+
+  
   document.getElementById('ball').addEventListener('click', event => {
-
+    
     event.preventDefault()
-
+    
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
-      .then(res => {
-
-        const pokemon = res.data
-        console.log(pokemon)
-        let pokemonName = pokemon.name
-        console.log(pokemonName)
-        let pokeList = document.getElementById('pokeList')
-
-        let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
-        // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
-
+    .then(res => {
+      
+      let pokemon = res.data
+      console.log(pokemon)
+      let pokemonName = pokemon.name
+      console.log(pokemonName)
+      let pokeList = document.getElementById('pokeList')
+      
+      
+      let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
+      // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
+      
         console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
         // check caughtPokemonArr value in console
 
-        let catchPokemon = Math.floor(Math.random() * 1)
+        let catchPokemon = Math.floor(Math.random() * 2)
         console.log(catchPokemon)
 
-        caughtPokemonArr.push(pokemonName)
-        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
-
-        localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
-        location.reload()
-        if (catchPokemon == 0) {
-          alert("you've caught a pokemon!")
+        
+        // location.reload()
+        if (catchPokemon == 1) {
+          // alert("you've caught a pokemon!")
+          caughtPokemonArr.push(pokemonName)
+          localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
+          console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+          document.getElementById(`caughtStatus`).innerHTML = `You've caught ${pokemon.species.name}`
+        } else {
+          document.getElementById(`caughtStatus`).innerHTML = `The Pokemon fled`
         }
       })
   })
-});
