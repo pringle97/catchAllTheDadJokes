@@ -6,10 +6,11 @@ let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || [
 M.AutoInit()
 
 caughtPokemonArr.forEach((pokemon, i) => {
-  let listElem = document.createElement('li')
-  listElem.className = 'collection-item waves-effect z-depth-1'
+  let listElem = document.createElement('a')
+  listElem.setAttribute("href", "#!")
+  listElem.className = 'collection-item'
   listElem.innerHTML = `
-  <a class="btn-flat"><h6>${pokemon}</h6></a>
+  ${pokemon}
   `
   pokeList.append(listElem)
 })

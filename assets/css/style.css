@@ -63,22 +63,15 @@
     "pokeImg"
     "pokeStats"
     "actionBtns";
-  border: 2px solid black;
 }
 
 .title {
   grid-area: title;
   margin: 10px 0 10px 0;
-  border: 2px solid red;
-}
-
-.card1 {
-  border: 2px solid green;
 }
 
 #pokemonImg {
   grid-area: pokeImg;
-  border: 2px solid purple;
 }
 
 #pokemonCard {
@@ -93,7 +86,6 @@
   grid-area: pokeStats;
   margin: 5px 0 10px 0;
   padding-bottom: 10px;
-  border: 2px solid brown;
 }
 
 .actionbtns-container {
@@ -198,6 +190,7 @@
 #cardContent {
   margin-top: 50px;
 }
+
 /* h2 {
   font-weight: bold;
 } */
@@ -209,3 +202,6 @@ h3 {
   color: white;
 }
 
+.hide {
+  display: none;
+}
