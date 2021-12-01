@@ -1,4 +1,3 @@
-
 Pokemon Safari
 
 Pokemon Safari is made using Visual Studio Code with materialize as the main is CSS framework. The main API used in this project are
