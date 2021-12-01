@@ -48,8 +48,8 @@ pokeCollection.forEach(item => {
         `
       document.getElementById('name-screen').innerHTML = `${capitalize(pokemon.species.name)}
       `
-      document.getElementById(`about-screen`).innerHTML = `Height: ${addDecimal(pokemon.height)} m
-        Weight: ${addDecimal(pokemon.weight)} kg
+      document.getElementById(`about-screen`).innerHTML = `Height: ${addDecimal(pokemon.height)}m
+        Weight: ${addDecimal(pokemon.weight)}kg
         `
       document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)}`
     })

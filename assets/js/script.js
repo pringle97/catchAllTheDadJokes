@@ -37,8 +37,8 @@ document.getElementById('start-button').addEventListener('click', event => {
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
         <h5>Type: ${capitalize(pokemon.types[0].type.name)}, ${capitalize(pokemon.types[1].type.name)}</h5>
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <h5>Height: ${addDecimal(pokemon.height)}m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)}kg</h5>
         `
       } else {
         console.log(pokemon.types[0].type.name)
@@ -49,8 +49,8 @@ document.getElementById('start-button').addEventListener('click', event => {
         document.getElementById('cardContent').innerHTML = `
         <h2><strong>${capitalize(pokemon.species.name)}</strong></h2>
         <h5>Type: ${capitalize(pokemon.types[0].type.name)}</h5>
-        <h5>Height: ${addDecimal(pokemon.height)} m</h5>
-        <h5>Weight: ${addDecimal(pokemon.weight)} kg</h5>
+        <h5>Height: ${addDecimal(pokemon.height)}m</h5>
+        <h5>Weight: ${addDecimal(pokemon.weight)}kg</h5>
         `
       }
     })
