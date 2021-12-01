@@ -1,11 +1,6 @@
 
-<<<<<<< HEAD
-body {
-  font-family: 'Press Start 2P', cursive;
-=======
-<<<<<<< HEAD
 .nav-wrapper {
-  background-color: #70c0a0;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
 }
 
@@ -21,44 +16,14 @@ body {
   background-color: #70c0a0;
 }
 
-.red {
-  background-color: #ff0000;
-}
-
-.yellow {
-  background-color: #fecb65;
-}
-
-.green {
-  background-color: #32cb65;
-}
-
-.blue {
-  background-color: #3298cb;
-}
-
-.light-blue {
-  background-color: #85bdfe;
-}
-
-.light-red {
-  background-color: #fe98cb;
-}
-
-.light-yellow {
-  background-color: #fefecb;
->>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
-}
-
 .nav-wrapper {
   background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
   padding: 0 2% 2% 2%;
 }
 
-.content {
-  display: flex;
-  flex-flow: wrap;
-  margin-bottom: 100px;
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #fbeeda;
 }
 
 .pokemonList {
@@ -78,7 +43,12 @@ body {
 }
 
 .pokemonInfo {
-  margin: 75px 25px 25px 0;
+  margin: 75px 75px 25px;
+}
+
+.pokemonInteract {
+  border: solid black;
+  margin: 75px;
 }
 
 .page-footer {
@@ -87,7 +57,13 @@ body {
   padding-bottom: 10px;
 }
 
-/* text box for interact starts here */
+h4 {
+  text-align: center;
+}
+
+.name {
+  text-align: center;
+}
 
 .pokemonInteract {
   font-size: 12px;
@@ -104,6 +80,8 @@ body {
     inset 0 0 0 1.5px black;
   margin: 45px 0 0 0;
 }
+
+
 
 /* text dialogue box ends here */
 
@@ -604,13 +582,29 @@ body {
   height: 25px;
 }
 
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 600px) {
+  #pokedex {
+    width: 100%;
+  }
 
-/* @media screen and (max-width: 800px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 800px) {
   body {
     width: 100%;
   }
-} */
+}
 
 /* pokedex ends here */
 
@@ -619,8 +613,23 @@ body {
   padding: 10px;
 }
 
-#list {
+#pokeList {
   font-family: 'Press Start 2P', cursive;
 }
-=======
->>>>>>> 564aaaba268f1f19ae3a85814d330c4a652cf008
+
+#random {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #9e9d9d;
+}
+
+.sprites {
+  height: 111px;
+  width: 171px;
+  border-radius: 5px;
+}
+
+h3 {
+  text-align: center;
+  background: linear-gradient(90deg, #ff1654 35%, #247ba0 60%);
+  color: white;
+}

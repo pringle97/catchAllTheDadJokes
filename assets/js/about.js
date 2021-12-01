@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+
+M.AutoInit()
+let audio = document.getElementById(`audio`);
+audio.volume = 0.2;
+
 const interactElem = document.getElementById(`interact`)
 const nameElem=document.getElementById(`name-screen`)
 const aboutElem = document.getElementById(`about-screen`)
@@ -10,8 +14,8 @@ M.AutoInit()
 document.getElementById(`alan`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Alan Truong`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.65m Weight: 58.97kg`
-  document.getElementById(`type-screen`).innerHTML =`Psychic`
-  document.getElementById(`id-screen`).innerHTML =`7`
+  document.getElementById(`type-screen`).innerHTML =`Type: Psychic`
+  document.getElementById(`id-screen`).innerHTML =`#7`
   document.getElementById(`main-screen`).innerHTML = `<img class="pictures" src="assets/pictures/alanPic.jpg">`
 
 
@@ -36,8 +40,8 @@ document.getElementById(`alan`).addEventListener(`click`, () => {
 document.getElementById(`kevin`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Kevin Kelley`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.80m Weight: 64.86kg`
-  document.getElementById(`type-screen`).innerHTML =`Normal`
-  document.getElementById(`id-screen`).innerHTML =`88`
+  document.getElementById(`type-screen`).innerHTML =`Type :Normal`
+  document.getElementById(`id-screen`).innerHTML =`#88`
   document.getElementById(`main-screen`).innerHTML = `<img class="pictures" src="assets/pictures/kevinPic.jpg">`
 
 
@@ -59,8 +63,8 @@ document.getElementById(`kevin`).addEventListener(`click`, () => {
 document.getElementById(`malia`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Malia Pringle`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.63m Weight: 70.3kg`
-  document.getElementById(`type-screen`).innerHTML =`Water`
-  document.getElementById(`id-screen`).innerHTML =`27`
+  document.getElementById(`type-screen`).innerHTML =`Type: Water`
+  document.getElementById(`id-screen`).innerHTML =`#27`
   document.getElementById(`main-screen`).innerHTML = `<img class="pictures" src="assets/pictures/maliaPic.jpg">`
 
 
@@ -82,8 +86,8 @@ document.getElementById(`malia`).addEventListener(`click`, () => {
 document.getElementById(`nathan`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Nathan Montelli`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.83m Weight: 70.3kg`
-  document.getElementById(`type-screen`).innerHTML =`Grass/Rock`
-  document.getElementById(`id-screen`).innerHTML =`92`
+  document.getElementById(`type-screen`).innerHTML =`Type: Grass/Rock`
+  document.getElementById(`id-screen`).innerHTML =`#92`
   document.getElementById(`main-screen`).innerHTML = `<img class="pictures" src="assets/pictures/nathanPic.jpg">`
 
 
@@ -105,8 +109,8 @@ document.getElementById(`nathan`).addEventListener(`click`, () => {
 document.getElementById(`peter`).addEventListener(`click`, () => {
   document.getElementById(`name-screen`).innerHTML =`Peter Song`
   document.getElementById(`about-screen`).innerHTML =`Height: 1.72m Weight: 65.77kg`
-  document.getElementById(`type-screen`).innerHTML =`Electric`
-  document.getElementById(`id-screen`).innerHTML =`9`
+  document.getElementById(`type-screen`).innerHTML =`Type: Electric`
+  document.getElementById(`id-screen`).innerHTML =`#9`
   document.getElementById(`main-screen`).innerHTML =`<img class="pictures" src="assets/pictures/peterPic1.jpg">`
   
   
@@ -128,7 +132,3 @@ document.getElementById(`peter`).addEventListener(`click`, () => {
 
 
 })
-
-=======
->>>>>>> 1fcce9ebe7efb9dc7d056c2f1d5350eb287a667b
-
