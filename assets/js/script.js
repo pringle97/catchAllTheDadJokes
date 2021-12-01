@@ -48,7 +48,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       // if statement if the pokemon has 2 type attributes
       if (pokemon.types[1]) {
         document.getElementById('pokemonImg').innerHTML = `
-        <img  src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
+        <img class="imageArt" src="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         // rendering pokemon information to innerHTML
         document.getElementById('cardContent').innerHTML = `
@@ -65,7 +65,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       } else {
         console.log(pokemon.types[0].type.name)
         document.getElementById('pokemonImg').innerHTML = `
-        <img src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
+        <img class="imageArt" src ="${svg}" alt="${pokemon.species.name}" width="400" height="400">
         `
         // rendering pokemon information to innerHTML
         document.getElementById('cardContent').innerHTML = `
