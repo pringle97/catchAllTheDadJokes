@@ -32,7 +32,6 @@ caughtPokemonArr.forEach((pokemon, i) => {
 
 // generator value from user mouse clicks
 let pokeCollection = document.querySelectorAll('.collection-item');
-console.log(pokeCollection)
 pokeCollection.forEach(item => {
   item.addEventListener('click', event => {
     let valueCheck = event.target.firstChild.textContent
@@ -86,8 +85,6 @@ document.getElementById('random').addEventListener('click', event => {
   if (randomNumber === 0 ) {
     axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
     .then(res => {
-      console.log(res)
-        
       // Grabbing info from API and setting into strings
         let punchline = res.data.punchline
         let setup = res.data.setup
@@ -109,13 +106,11 @@ document.getElementById('random').addEventListener('click', event => {
         // initiation of type writer function for dad joke
         typeWriter()
     })
-  // .catch(err => console.log(err));
 
   } else if (randomNumber === 1) {
     // axios get for other joke
     axios.get(`https://api.quotable.io/random`)
       .then(res => {
-        console.log(res)
         // Grabbing info from API and setting into strings
         let quote = res.data.content     
 
@@ -124,7 +119,6 @@ document.getElementById('random').addEventListener('click', event => {
         setupElem.innerHTML = ''
         jokeElem.innerHTML = ''
 
-        console.log(quote)
         // // type writer function
         function typeWriter2() {
           if (i < quote.length) {
@@ -141,7 +135,6 @@ document.getElementById('random').addEventListener('click', event => {
   } else {
     axios.get(`https://geek-jokes.sameerkumar.website/api?format=json`)
       .then(res => {
-        console.log(res)
         // Grabbing info from API and setting into strings
         let joke = res.data.joke
       
