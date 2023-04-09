@@ -15,7 +15,6 @@ let capitalize = (string) => {
 // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
 let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
 // let pokemonName = caughtPokemonArr[]
-// console.log(pokemonName)
 
 
 // loop for array and rendering onto list 
@@ -29,7 +28,7 @@ caughtPokemonArr.forEach((pokemon, i) => {
   `
   document.getElementById('pokeList').append(listElem)
 })
-console.log(caughtPokemonArr)
+
 
 // generator value from user mouse clicks
 let pokeCollection = document.querySelectorAll('.collection-item');
@@ -38,31 +37,25 @@ pokeCollection.forEach(item => {
   item.addEventListener('click', event => {
     let valueCheck = event.target.firstChild.textContent
     let buttonElem = event.target.id
-    console.log(buttonElem)
-    console.log(valueCheck)
-    console.log(event.target)
-
-
     event.preventDefault()
 
     // using generated value from mouse clicks to grab Pokemon information from Pokemon API
     axios.get(`https://pokeapi.co/api/v2/pokemon/${valueCheck}`)
       .then(res => {
-
         let pokemon = res.data
-        console.log(valueCheck)
         let svg = pokemon.sprites.other.dream_world.front_default
         
+        document.getElementById('random').style.display = 'block'
         // adds information onto pokedex from pokemon API
         document.getElementById('main-screen').innerHTML = `
         <img class='sprites' src="${svg}" alt="${pokemon.species.name}">
         `
         document.getElementById('name-screen').innerHTML = `${capitalize(pokemon.species.name)}
       `
-        document.getElementById(`about-screen`).innerHTML = `Height: ${addDecimal(pokemon.height)}m
+        document.getElementById('about-screen').innerHTML = `Height: ${addDecimal(pokemon.height)}m
         Weight: ${addDecimal(pokemon.weight)}kg
         `
-        document.getElementById(`type-screen`).innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)}`
+        document.getElementById('type-screen').innerHTML = `Type: ${capitalize(pokemon.types[0].type.name)}`
       })
   })
 })
@@ -70,14 +63,18 @@ pokeCollection.forEach(item => {
 
 
 //  Joke event starts here 
+//unhide interact button on pokemon click
+
+// function displayInteractButton() {
+//     if (document.getElementsByClassName('pokemonInfo').onclick){
+//       document.getElementsByid('random').style.display = 'block'
+//     }  
+//   }
+//   displayInteractButton()
 
 // Click event to generate random joke/quote
 document.getElementById('random').addEventListener('click', event => {
   event.preventDefault()
-  //const interactWithPokemon = document.getElementById('interact')
-  // function visibilityToggler() {
-  //   if 
-  // }
   // each event will be set to a random number and the click will generate random number 
   let randomNumber = Math.floor(Math.random() * 3)
   const quoteElem = document.getElementById('quote')
