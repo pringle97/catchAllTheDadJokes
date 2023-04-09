@@ -69,25 +69,24 @@ pokeCollection.forEach(item => {
 
 
 
-// Joke event starts here 
-
+//  Joke event starts here 
 
 // Click event to generate random joke/quote
 document.getElementById('random').addEventListener('click', event => {
   event.preventDefault()
-
+  //const interactWithPokemon = document.getElementById('interact')
+  // function visibilityToggler() {
+  //   if 
+  // }
   // each event will be set to a random number and the click will generate random number 
   let randomNumber = Math.floor(Math.random() * 3)
-  console.log(randomNumber)
   const quoteElem = document.getElementById('quote')
   const setupElem = document.getElementById('setup')
   const jokeElem = document.getElementById('joke')
   let i = 0
   let speed = 10
   
-  
   if (randomNumber === 0 ) {
-    
     axios.get(`https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes`)
     .then(res => {
       console.log(res)
@@ -102,7 +101,7 @@ document.getElementById('random').addEventListener('click', event => {
         quoteElem.innerHTML = ''
         jokeElem.innerHTML = ''
       
-        // // type writer function
+        // type writer function
         function typeWriter() {
           if (i < words.length) {
             document.getElementById("setup").innerHTML += words.charAt(i)
@@ -112,7 +111,6 @@ document.getElementById('random').addEventListener('click', event => {
         }
         // initiation of type writer function for dad joke
         typeWriter()
-       
     })
   // .catch(err => console.log(err));
 
@@ -165,11 +163,9 @@ document.getElementById('random').addEventListener('click', event => {
         }
         // initiation of type writer function for random joke
         typeWriter3()
-         
       })
       .catch(err => console.log(err))
   }
-
 })
 
 

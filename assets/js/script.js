@@ -18,7 +18,7 @@ let goNear = document.getElementById('go-near')
 let runAway = document.getElementById('run-away')
 console.log(x)
 
-let pokemonNum 
+let pokemonNum
 
 
 let addDecimal = (num) => {
@@ -44,7 +44,7 @@ document.getElementById('start-button').addEventListener('click', event => {
       console.log(pokemon)
       // pokemon api hi-res sprites 
       let svg = pokemon.sprites.other.dream_world.front_default
-      
+
       // if statement if the pokemon has 2 type attributes
       if (pokemon.types[1]) {
         document.getElementById('pokemonImg').innerHTML = `
@@ -80,102 +80,85 @@ document.getElementById('start-button').addEventListener('click', event => {
         `
       }
     })
-    // .catch (err => console.log(err))
-    
-  });
+});
 
-  // throw ball click event
-  document.getElementById('ball').addEventListener('click', event => {
-    
-    event.preventDefault()
-    
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
+// throw ball click event
+document.getElementById('ball').addEventListener('click', event => {
+
+  event.preventDefault()
+
+  axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNum}`)
     .then(res => {
-      
+
       let pokemon = res.data
       console.log(pokemon)
       let pokemonName = pokemon.name
       console.log(pokemonName)
       let pokeList = document.getElementById('pokeList')
-  
-      
-      
+
+
+
       let caughtPokemonArr = JSON.parse(localStorage.getItem('caughtPokemonArr')) || []
       // grabbing array from localStorage and setting it to caughtPokemonArr variable. If array does not exist, sets it to empty array. Parse with JSON.parse so a real array is returned, not a string array
-      
-        console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
-        // check caughtPokemonArr value in console
+
+      console.log(caughtPokemonArr, `caughtPokemonArr, AKA our array that we pulled from localStorage. This should console log as an empty array on the first try since we didn't push anything into it yet.`)
+      // check caughtPokemonArr value in console
 
 
-        // random number generator to capture pokemon
-        let catchPokemon = Math.floor(Math.random() * 3)
-        console.log(catchPokemon)
+      // random number generator to capture pokemon
+      let catchPokemon = Math.floor(Math.random() * 3)
+      console.log(catchPokemon)
 
-        
+
       //  if statement for caught pokemon vs uncaught pokemon
-        if (catchPokemon == 1) {
-          // if caught push pokemon name into json array
-          caughtPokemonArr.push(pokemonName)
-          // taking array and setting as string to be put in local storage 
-          localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
-          console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
+      if (catchPokemon == 1) {
+        // if caught push pokemon name into json array
+        caughtPokemonArr.push(pokemonName)
+        // taking array and setting as string to be put in local storage 
+        localStorage.setItem('caughtPokemonArr', JSON.stringify(caughtPokemonArr))
+        console.log(pokemonName, 'caughtPokemonArr after we pushed stuff')
 
-          // when pokemon is caught opens modal for alert 
-          document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
-          
-          // type writer function variables
-          let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
-          let i = 0
-          let speed = 50
-          let words = `${pokemonStatus}`
-          console.log(pokemonStatus)
-          document.getElementById(`caughtStatus`).innerHTML = ``
+        // when pokemon is caught opens modal for alert 
+        document.getElementById(`caughtStatus`).innerHTML = `You've caught ${capitalize(pokemon.species.name)}!`
 
-          // type writer function
-          function typeWriter() {
-            if (i < words.length) {
-              document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
-              i++;
-              setTimeout(typeWriter, speed);
-            }
+        // type writer function variables
+        let pokemonStatus = document.getElementById(`caughtStatus`).innerHTML
+        let i = 0
+        let speed = 50
+        let words = `${pokemonStatus}`
+        console.log(pokemonStatus)
+        document.getElementById(`caughtStatus`).innerHTML = ``
+
+        // type writer function
+        function typeWriter() {
+          if (i < words.length) {
+            document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
           }
-          // initiate type writer function for caught pokemon 
-          typeWriter()
-
-          // 
-        } else {
-          document.getElementById(`caughtStatus`).innerHTML = `The Pokemon broke free!`
-         
-          // type writer function variables
-          let pokemonFled = document.getElementById(`caughtStatus`).innerHTML
-          let i = 0
-          let speed = 50
-          let words = `${pokemonFled}`
-          console.log(pokemonFled)
-          document.getElementById(`caughtStatus`).innerHTML = ``
-
-          function typeWriter2() {
-            if (i < words.length) {
-              document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
-              i++;
-              setTimeout(typeWriter2, speed);
-            }
-          }
-          typeWriter2()
-          
-          
-        
         }
-      })
-  })
+        // initiate type writer function for caught pokemon 
+        typeWriter()
 
+      } else {
+        document.getElementById(`caughtStatus`).innerHTML = `The Pokemon broke free!`
 
+        // type writer function variables
+        let pokemonFled = document.getElementById(`caughtStatus`).innerHTML
+        let i = 0
+        let speed = 50
+        let words = `${pokemonFled}`
+        console.log(pokemonFled)
+        document.getElementById(`caughtStatus`).innerHTML = ``
 
-
-
-
-
-
-
-
- 
+        function typeWriter2() {
+          if (i < words.length) {
+            document.getElementById(`caughtStatus`).innerHTML += words.charAt(i);
+            i++;
+            setTimeout(typeWriter2, speed);
+          }
+        }
+        typeWriter2()
+      }
+    })
+})
